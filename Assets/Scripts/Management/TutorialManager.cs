@@ -1,21 +1,20 @@
 using System.Collections;
-using UniTools.Patterns.Singletons;
+using Configs;
 using UnityEngine;
 
 namespace Management
 {
-    public class GameManager : Singleton<GameManager>
+    public class TutorialManager : MonoBehaviour, IGameStateManager
     {
-        // Start is called before the first frame update
-        private IEnumerator Start()
+        public void Initialize(ConfigurationsHolder configuration)
         {
-            yield return RunGame();
+            
         }
 
-        private IEnumerator RunGame()
+        public IEnumerator Run()
         {
             yield return null;
-            Debug.LogWarning("I'm running!");
+            Debug.LogWarning($"I'm running! ({this.GetType().Name})");
         }
     }
 }
