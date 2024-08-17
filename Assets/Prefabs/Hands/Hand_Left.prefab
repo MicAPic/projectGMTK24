@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1715346003116288740}
-  m_Layer: 0
+  - component: {fileID: 2693737175945968593}
+  - component: {fileID: 8245586587219589274}
+  m_Layer: 3
   m_Name: Hand_Left
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,6 +35,48 @@ Transform:
   - {fileID: 2592706819912268760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2693737175945968593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265784570694945343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f05c355c9a14696acc9bc463d91750a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shrinkTweenSettings:
+    duration: 0.6
+    ease: 3
+    customEase:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    cycles: 1
+    cycleMode: 0
+    startDelay: 0
+    endDelay: 0
+    useUnscaledTime: 0
+    useFixedUpdate: 0
+  _palm: {fileID: 6356984619522309373}
+--- !u!114 &8245586587219589274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265784570694945343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b3941ca9904d1d82b2e665884fc976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 3217731937327615089}
+  _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
 --- !u!1 &3698180933582075368
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,9 +89,11 @@ GameObject:
   - component: {fileID: 608136547703393124}
   - component: {fileID: 3378279357819319698}
   - component: {fileID: 6837018451878168733}
-  m_Layer: 0
+  - component: {fileID: 7445832848138864936}
+  - component: {fileID: 8313411173495518364}
+  m_Layer: 3
   m_Name: HandProper
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +219,20 @@ MonoBehaviour:
   m_UTess2D: 1
   m_Creator: {fileID: 0}
   m_Modifiers: []
-  m_ColliderSegment: []
+  m_ColliderSegment:
+  - {x: 0.027705628, y: 2.2484038}
+  - {x: -0.019158235, y: 1.8356961}
+  - {x: -0.14447132, y: 1.4198673}
+  - {x: -0.4324746, y: 0.63232046}
+  - {x: -0.52314824, y: 0.34056455}
+  - {x: -0.6136502, y: -0.055174626}
+  - {x: -0.64849687, y: -0.26516864}
+  - {x: -0.665945, y: -0.5893865}
+  - {x: -0.6458278, y: -0.8764926}
+  - {x: -0.5764748, y: -1.1752316}
+  - {x: -0.45110425, y: -1.4645373}
+  - {x: -0.26171735, y: -1.7407929}
+  - {x: 0.17706846, y: -2.1765468}
 --- !u!114 &6837018451878168733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +249,85 @@ MonoBehaviour:
   _pointIndex: 0
   _from: {fileID: 6356984619522309373}
   _offset: {x: 0, y: 0, z: 0}
+--- !u!68 &7445832848138864936
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698180933582075368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.25
+  m_Points:
+  - {x: 0.027705628, y: 2.2484038}
+  - {x: -0.019158235, y: 1.8356961}
+  - {x: -0.14447132, y: 1.4198673}
+  - {x: -0.4324746, y: 0.63232046}
+  - {x: -0.52314824, y: 0.34056455}
+  - {x: -0.6136502, y: -0.055174626}
+  - {x: -0.64849687, y: -0.26516864}
+  - {x: -0.665945, y: -0.5893865}
+  - {x: -0.6458278, y: -0.8764926}
+  - {x: -0.5764748, y: -1.1752316}
+  - {x: -0.45110425, y: -1.4645373}
+  - {x: -0.26171735, y: -1.7407929}
+  - {x: 0.17706846, y: -2.1765468}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!50 &8313411173495518364
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698180933582075368}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &9195586938826959079
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,11 +340,12 @@ GameObject:
   - component: {fileID: 4358351678303840570}
   - component: {fileID: 1980867183436233715}
   - component: {fileID: 3217731937327615089}
-  - component: {fileID: 7132451399317970701}
   - component: {fileID: 191204830367596676}
-  m_Layer: 0
+  - component: {fileID: 3581191751336459573}
+  - component: {fileID: 731963116868265728}
+  m_Layer: 3
   m_Name: Palm
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +464,66 @@ MonoBehaviour:
   _deceleration: 23
   _turnSpeed: 45
   _positionConstraints: {fileID: 191204830367596676}
---- !u!50 &7132451399317970701
+--- !u!114 &191204830367596676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195586938826959079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942ae443e5a74430ab1c1bcdc0e85d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxPosition>k__BackingField: {x: 9.25, y: 4.5}
+  <MinPosition>k__BackingField: {x: -9.25, y: -4.5}
+--- !u!61 &3581191751336459573
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195586938826959079}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &731963116868265728
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -352,17 +550,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &191204830367596676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9195586938826959079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942ae443e5a74430ab1c1bcdc0e85d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxPosition>k__BackingField: {x: 9.25, y: 4.5}
-  <MinPosition>k__BackingField: {x: -9.25, y: -4.5}

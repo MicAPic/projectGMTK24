@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 265784570694945343, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
       propertyPath: m_Name
-      value: Hand_Right Variant
+      value: Hand_Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 265784570694945343, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
+      propertyPath: m_TagString
+      value: RightHand
       objectReference: {fileID: 0}
     - target: {fileID: 608136547703393124, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -70,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1980867183436233715, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
       propertyPath: m_DefaultActionMap
-      value: 622e4059-6656-4aa4-8446-2d29a8327600
+      value: Right
       objectReference: {fileID: 0}
     - target: {fileID: 3378279357819319698, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
       propertyPath: m_Creator
@@ -83,6 +87,14 @@ PrefabInstance:
     - target: {fileID: 3378279357819319698, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[1].leftTangent.y
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698180933582075368, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
+      propertyPath: m_TagString
+      value: RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195586938826959079, guid: 473d45c934487417eb0d536b11677fc4, type: 3}
+      propertyPath: m_TagString
+      value: RightHand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

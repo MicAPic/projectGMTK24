@@ -6,6 +6,8 @@ namespace Hands
 {
     public class HandController : MonoBehaviour
     {
+        public bool CanMove { get; set; } = true;
+
         [SerializeField] private float _maxSpeed = 10f;
         [SerializeField] private float _acceleration = 10f;
         [SerializeField] private float _deceleration = 10f;
@@ -30,6 +32,7 @@ namespace Hands
             
         public void OnMoveHand(InputValue value)
         {
+            if (CanMove is false) return;
             _direction.Value = value.Get<Vector2>();
         }
 
@@ -75,10 +78,19 @@ namespace Hands
             {
                 _maxSpeedChange.y = _deceleration * Time.deltaTime;
             }
-            
-            CalculateCurrentVelocity();
-            ClampCurrentVelocity();
-            _rigidbody.velocity = _velocity;
+
+            if (CanMove)
+            {
+                CalculateCurrentVelocity();
+                ClampCurrentVelocity();
+                _rigidbody.velocity = _velocity;
+            }
+            else
+            {
+                _rigidbody.velocity = Vector2.zero;
+                _direction.Value = Vector2.zero;
+                _velocity = Vector2.zero;
+            }
         }
     
         private void CalculateCurrentVelocity()
