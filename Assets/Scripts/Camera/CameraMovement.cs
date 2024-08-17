@@ -50,7 +50,6 @@ public class CameraMovement : MonoBehaviour
         _camera.orthographicSize = currentZoom;
 
         float currentYPosition = Mathf.Lerp(_startCameraYPosition, _endCameraYPosition, currentZoom/_endZoomValue);
-        Debug.Log(currentYPosition);
         transform.position = new Vector3(background.position.x, currentYPosition, -10);
     }
 }
