@@ -6,10 +6,12 @@ namespace Hands
 {
     public class HandController : MonoBehaviour
     {
-        public float _maxSpeed = 10f;
-        public float _acceleration = 10f;
-        public float _deceleration = 10f;
-        public float _turnSpeed = 10f;
+        [SerializeField] private float _maxSpeed = 10f;
+        [SerializeField] private float _acceleration = 10f;
+        [SerializeField] private float _deceleration = 10f;
+        [SerializeField] private float _turnSpeed = 10f;
+
+        [SerializeField] private HandPositionConstraints _positionConstraints;
             
         public IReadOnlyReactiveProperty<Vector2> Direction => _direction;
         private ReactiveProperty<Vector2> _direction;
@@ -74,14 +76,29 @@ namespace Hands
                 _maxSpeedChange.y = _deceleration * Time.deltaTime;
             }
             
-            Move();
+            CalculateCurrentVelocity();
+            ClampCurrentVelocity();
+            _rigidbody.velocity = _velocity;
         }
     
-        private void Move()
+        private void CalculateCurrentVelocity()
         {
             _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, _maxSpeedChange.x);
             _velocity.y = Mathf.MoveTowards(_velocity.y, _desiredVelocity.y, _maxSpeedChange.y);
-            _rigidbody.velocity = _velocity;
+        }
+
+        private void ClampCurrentVelocity()
+        {
+            var positionAtEndOfStep = _rigidbody.position + _velocity * Time.deltaTime;
+            positionAtEndOfStep.x = Mathf.Clamp(
+                positionAtEndOfStep.x, 
+                _positionConstraints.MinPosition.x,
+                _positionConstraints.MaxPosition.x);
+            positionAtEndOfStep.y = Mathf.Clamp(
+                positionAtEndOfStep.y, 
+                _positionConstraints.MinPosition.y,
+                _positionConstraints.MaxPosition.y);
+            _velocity = (positionAtEndOfStep - _rigidbody.position) / Time.deltaTime;
         }
     }
 }
