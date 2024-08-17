@@ -13,3 +13,38 @@ MonoBehaviour:
   m_Name: MainLoopConfiguration
   m_EditorClassIdentifier: 
   <TimeBetweenDays>k__BackingField: 10
+  <MaxMoneyAmount>k__BackingField: 999
+  <MinMoneyAmount>k__BackingField: 0
+  <MoneyReductionSpeedCurve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.08842468
+      value: 0.93844604
+      inSlope: 0.8128784
+      outSlope: 0.8128784
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.12935431
+    - serializedVersion: 3
+      time: 1.8612487
+      value: 2.3730621
+      inSlope: 0.54846966
+      outSlope: 0.54846966
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.039685752
+    - serializedVersion: 3
+      time: 500
+      value: 100
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

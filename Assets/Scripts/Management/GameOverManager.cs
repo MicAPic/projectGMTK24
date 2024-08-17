@@ -13,8 +13,8 @@ namespace Management
 
         public IEnumerator Run()
         {
-            yield return null;
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
+            yield return null;
         }
     }
 }

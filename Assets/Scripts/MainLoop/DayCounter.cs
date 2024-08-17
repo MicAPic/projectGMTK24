@@ -23,7 +23,6 @@ namespace MainLoop
             while (true)
             {
                 _day.Value++;
-                Debug.LogWarning($"Day {_day.Value}");
                 yield return Tween.Delay(_configurations.MainLoopConfiguration.TimeBetweenDays).ToYieldInstruction();
             }
         }

@@ -12,22 +12,24 @@ namespace Management
         [SerializeField] private MainLoopView _ui;
         
         public DayCounter DayCounter { get; private set; }
+        public TreasuryController TreasuryController { get; private set; }
         
         private List<Coroutine> _timedCoroutines = new List<Coroutine>();
 
         public void Initialize(ConfigurationsHolder configurations)
         {
             DayCounter = new DayCounter(configurations);
+            TreasuryController = new TreasuryController(configurations);
             
             _ui.Initialize(this);
         }
         
         public IEnumerator Run()
         {
+            Debug.LogWarning($"I'm running! ({this.GetType().Name})");
             StartTimedCoroutines();
             
-            Debug.LogWarning($"I'm running! ({this.GetType().Name})");
-            yield return new WaitForSeconds(1000.0f);
+            yield return new WaitWhile(() => TreasuryController.Money.Value > 0.0f);
             
             StopTimedCoroutines();
         }
@@ -36,11 +38,11 @@ namespace Management
         {
             var dayCounterRoutine = StartCoroutine(DayCounter.Run());
             _timedCoroutines.Add(dayCounterRoutine);
+            
+            var moneyDecrementRoutine = StartCoroutine(TreasuryController.Run());
+            _timedCoroutines.Add(moneyDecrementRoutine);
         }
 
-        private void StopTimedCoroutines()
-        {
-            _timedCoroutines.ForEach(StopCoroutine);
-        }
+        private void StopTimedCoroutines() => _timedCoroutines.ForEach(StopCoroutine);
     }
 }
