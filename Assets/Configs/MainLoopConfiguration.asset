@@ -15,46 +15,64 @@ MonoBehaviour:
   <DelayBeforeStart>k__BackingField: 3.5
   <TimeBetweenDays>k__BackingField: 10
   <InitialMoneyAmount>k__BackingField: 333
-  <MaxMoneyAmount>k__BackingField: 99999
+  <MaxMoneyAmount>k__BackingField: 999
   <MinMoneyAmount>k__BackingField: 0
   <MoneyReductionSpeedCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.08842468
-      value: 0.93844604
-      inSlope: 0.8128784
-      outSlope: 0.8128784
+      time: 0
+      value: 1
+      inSlope: 0.002671893
+      outSlope: 0.002671893
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.12935431
+      outWeight: 0.33598962
     - serializedVersion: 3
-      time: 80.61403
-      value: 9.545059
-      inSlope: 0.062314134
-      outSlope: 0.062314134
+      time: 10
+      value: 2
+      inSlope: 0.05107645
+      outSlope: 0.05107645
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.16059338
-    - serializedVersion: 3
-      time: 288.17676
-      value: 16.266815
-      inSlope: 0.009222034
-      outSlope: 0.009222034
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.20494193
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 498.85602
-      value: 26.090477
-      inSlope: 0
-      outSlope: 0
+      time: 20
+      value: 3
+      inSlope: 0.0416625
+      outSlope: 0.0416625
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 30
+      value: 5
+      inSlope: 0.037303627
+      outSlope: 0.037303627
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 40
+      value: 7
+      inSlope: 0.006407729
+      outSlope: 0.006407729
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13849173
+    - serializedVersion: 3
+      time: 100
+      value: 8
+      inSlope: 0.0012953003
+      outSlope: 0.0012953003
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18219103
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -73,7 +91,34 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1000
+      time: 20
+      value: 4
+      inSlope: -0.008799507
+      outSlope: -0.008799507
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 40
+      value: 3
+      inSlope: -0.00826599
+      outSlope: -0.00826599
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 60
+      value: 2
+      inSlope: -0.0068478775
+      outSlope: -0.0068478775
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
       value: 1
       inSlope: 0
       outSlope: 0
@@ -89,16 +134,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 5
+      value: 7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -106,8 +142,35 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.070668295
     - serializedVersion: 3
-      time: 100
+      time: 20
+      value: 6
+      inSlope: -0.04684376
+      outSlope: -0.04684376
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 40
       value: 5
+      inSlope: -0.04567127
+      outSlope: -0.04567127
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 60
+      value: 4
+      inSlope: -0.030794231
+      outSlope: -0.030794231
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 2
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -120,21 +183,21 @@ MonoBehaviour:
   <DragonSpawnRanges>k__BackingField:
     m_keys: 02000000000000000100000003000000
     m_values:
-    - <Start>k__BackingField: {x: -14.9, y: -4, z: 0}
-      <End>k__BackingField: {x: -14.9, y: 7.6, z: 0}
-    - <Start>k__BackingField: {x: -13.9, y: 8.6, z: 0}
-      <End>k__BackingField: {x: -2.45, y: 8.6, z: 0}
-    - <Start>k__BackingField: {x: 2.45, y: 8.6, z: 0}
-      <End>k__BackingField: {x: 13.9, y: 8.6, z: 0}
-    - <Start>k__BackingField: {x: 14.9, y: -4, z: 0}
-      <End>k__BackingField: {x: 14.9, y: 7.6, z: 0}
+    - <Start>k__BackingField: {x: -29.5, y: 9.5, z: 0}
+      <End>k__BackingField: {x: -29.5, y: -3, z: 0}
+    - <Start>k__BackingField: {x: -20, y: 17.2, z: 0}
+      <End>k__BackingField: {x: -9, y: 17.2, z: 0}
+    - <Start>k__BackingField: {x: 9, y: 17.2, z: 0}
+      <End>k__BackingField: {x: 20, y: 17.2, z: 0}
+    - <Start>k__BackingField: {x: 29.5, y: 9.5, z: 0}
+      <End>k__BackingField: {x: 29.5, y: -3, z: 0}
   <DragonTravelDistance>k__BackingField:
     m_keys: 02000000030000000000000001000000
     m_values:
-    - {x: 37.9, y: 0, z: 0}
-    - {x: -37.9, y: 0, z: 0}
-    - {x: 0, y: -25.6, z: 0}
-    - {x: 0, y: -25.6, z: 0}
+    - {x: 66.7, y: 0, z: 0}
+    - {x: -66.7, y: 0, z: 0}
+    - {x: 0, y: -41.9, z: 0}
+    - {x: 0, y: -41.9, z: 0}
   <DragonPrefab>k__BackingField: {fileID: 7181610055722753781, guid: f0e156332bac543799e58bc00d39a28d, type: 3}
   <FireSpawnCooldown>k__BackingField: 0.07
   <FireRemainTime>k__BackingField: 2

@@ -89,10 +89,15 @@ namespace Houses
                     if (_currentContainerValue < 0)
                     {
                         _currentContainerValue = 0;
-                        yield break;
+                        yield return null;
                     }
 
                     yield return null;
+                }
+                if (_currentContainerValue < 0)
+                {
+                    _currentContainerValue = 0;
+                    yield break;
                 }
                 yield return null;
             }

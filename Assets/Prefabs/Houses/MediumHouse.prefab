@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: containerLimit
-      value: 100
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: collectingSpeed
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: rechargingSpeed
-      value: 10
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
