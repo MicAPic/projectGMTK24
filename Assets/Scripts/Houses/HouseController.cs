@@ -41,8 +41,8 @@ public class HouseController : MonoBehaviour
 
     public IEnumerator Run()
     {
-        yield return StartCoroutine(Collecting());
-        yield return StartCoroutine(Recharging());
+        yield return Collecting();
+        yield return Recharging();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
