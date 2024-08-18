@@ -23,8 +23,8 @@ namespace MainLoop
             _configurations = configurations;
             _startTime = Time.time;
             _money.Value = _configurations.MainLoopConfiguration.MaxMoneyAmount;
-            
-            //TODO: subscribe to static event in houses, call AddMoney()
+
+            HouseController.CollectedCoins.Subscribe(x => AddMoney(x));
         }
         
         public IEnumerator Run()
