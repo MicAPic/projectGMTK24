@@ -1,7 +1,7 @@
 using Hands;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using UniRx;
 using UnityEngine;
 
 public class HouseController : MonoBehaviour
@@ -18,6 +18,9 @@ public class HouseController : MonoBehaviour
     private float _currentContainerValue;
     private bool _isHandTriggered = false;
     private bool _resetHouse = false;
+
+    public static IObservable<float> CollectedCoins => _collectedCoins;
+    private static Subject<float> _collectedCoins = new Subject<float>();
 
     // Start is called before the first frame update
     void Start()
@@ -64,8 +67,10 @@ public class HouseController : MonoBehaviour
         {
             while (_isHandTriggered)
             {
-                _currentContainerValue -= collectingSpeed * Time.deltaTime;
-                if(_currentContainerValue < 0)
+                var collectedCoins = collectingSpeed * Time.deltaTime;
+                _currentContainerValue -= collectedCoins;
+                _collectedCoins.OnNext(collectedCoins);
+                if (_currentContainerValue < 0)
                 {
                     _currentContainerValue = 0;
                     yield break;
@@ -87,4 +92,5 @@ public class HouseController : MonoBehaviour
         _currentContainerValue = containerLimit;
         _resetHouse = true;
     }
+
 }
