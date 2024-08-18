@@ -2,7 +2,6 @@ using System.Collections;
 using Configs;
 using PrimeTween;
 using UniRx;
-using UnityEngine;
 
 namespace MainLoop
 {

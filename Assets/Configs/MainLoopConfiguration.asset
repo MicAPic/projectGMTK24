@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MainLoopConfiguration
   m_EditorClassIdentifier: 
   <TimeBetweenDays>k__BackingField: 10
-  <MaxMoneyAmount>k__BackingField: 999
+  <MaxMoneyAmount>k__BackingField: 9999
   <MinMoneyAmount>k__BackingField: 0
   <MoneyReductionSpeedCurve>k__BackingField:
     serializedVersion: 2
@@ -49,3 +49,72 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   <DamageCooldownDuration>k__BackingField: 5
+  <DragonStartDelay>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1000
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <TimeBetweenDragons>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.070668295
+    - serializedVersion: 3
+      time: 100
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.23404378
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <DragonSpawnRanges>k__BackingField:
+    m_keys: 02000000000000000100000003000000
+    m_values:
+    - <Start>k__BackingField: {x: -14.9, y: -4, z: 0}
+      <End>k__BackingField: {x: -14.9, y: 7.6, z: 0}
+    - <Start>k__BackingField: {x: -13.9, y: 8.6, z: 0}
+      <End>k__BackingField: {x: -2.45, y: 8.6, z: 0}
+    - <Start>k__BackingField: {x: 2.45, y: 8.6, z: 0}
+      <End>k__BackingField: {x: 13.9, y: 8.6, z: 0}
+    - <Start>k__BackingField: {x: 14.9, y: -4, z: 0}
+      <End>k__BackingField: {x: 14.9, y: 7.6, z: 0}
+  <DragonPrefab>k__BackingField: {fileID: 7181610055722753781, guid: f0e156332bac543799e58bc00d39a28d, type: 3}

@@ -13,6 +13,7 @@ namespace Management
         
         public DayCounter DayCounter { get; private set; }
         public TreasuryController TreasuryController { get; private set; }
+        public DragonSpawner DragonSpawner { get; private set; }
         
         private List<Coroutine> _timedCoroutines = new List<Coroutine>();
 
@@ -20,6 +21,9 @@ namespace Management
         {
             DayCounter = new DayCounter(configurations);
             TreasuryController = new TreasuryController(configurations);
+
+            var dragon = Instantiate(configurations.MainLoopConfiguration.DragonPrefab);
+            DragonSpawner = new DragonSpawner(configurations, dragon);
             
             _ui.Initialize(this);
         }
@@ -41,6 +45,9 @@ namespace Management
             
             var moneyDecrementRoutine = StartCoroutine(TreasuryController.Run());
             _timedCoroutines.Add(moneyDecrementRoutine);
+            
+            var dragonSpawnRoutine = StartCoroutine(DragonSpawner.Run());
+            _timedCoroutines.Add(dragonSpawnRoutine);
         }
 
         private void StopTimedCoroutines() => _timedCoroutines.ForEach(StopCoroutine);

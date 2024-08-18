@@ -32,7 +32,6 @@ namespace MainLoop
             while (true)
             {
                 var currentDecrement = DifficultyCurve.Evaluate(ElapsedTime);
-                // Debug.Log(currentDecrement);
                 
                 RemoveMoney(currentDecrement);
                 yield return null;
