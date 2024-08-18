@@ -63,6 +63,7 @@ MonoBehaviour:
     useUnscaledTime: 0
     useFixedUpdate: 0
   _palm: {fileID: 6356984619522309373}
+  _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
 --- !u!114 &8245586587219589274
 MonoBehaviour:
   m_ObjectHideFlags: 0

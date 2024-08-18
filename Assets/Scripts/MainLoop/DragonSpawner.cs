@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Configs;
 using Dragon;
 using PrimeTween;
@@ -15,9 +16,10 @@ namespace MainLoop
     public class DragonSpawner
     {
         private readonly ConfigurationsHolder _configurations;
-        private readonly float _startTime;
         private readonly DragonPresenter _dragon;
         
+        private float _startTime;
+
         private float ElapsedTime => Time.time - _startTime;
         private AnimationCurve CooldownCurve => _configurations.MainLoopConfiguration.TimeBetweenDragons;
         private AnimationCurve DelayCurve => _configurations.MainLoopConfiguration.DragonStartDelay;
@@ -27,7 +29,7 @@ namespace MainLoop
         {
             _configurations = configurations;
             
-            _startTime = Time.time;
+            ResetTime();
             
             _dragon = dragon.GetComponent<DragonPresenter>();
             dragon.GetComponent<DragonPointer>().Initialize(_dragon, pointer);
@@ -40,19 +42,23 @@ namespace MainLoop
             while (true)
             {
                 var currentCooldown = CooldownCurve.Evaluate(ElapsedTime);
-                yield return Tween.Delay(currentCooldown).ToYieldInstruction();
+                yield return new WaitForSeconds(currentCooldown);
                 
                 SetDragonStartPosition();
-                // TODO: warn player with an !
+                _configurations.AudioControllerHolder.AudioController.Play(AudioID.Danger);
                 
                 var currentStartDelay = DelayCurve.Evaluate(ElapsedTime);
-                yield return Tween.Delay(currentStartDelay).ToYieldInstruction();
+                Debug.Log($"Current delay: {currentStartDelay}");
+                yield return new WaitForSeconds(currentStartDelay);
+                Debug.Log($"Delay is over");
                 
                 yield return _dragon.Run();
                 
                 _dragon.Hide();
             }
         }
+
+        public void ResetTime() => _startTime = Time.time;
 
         private void SetDragonStartPosition()
         {

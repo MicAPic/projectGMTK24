@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Configs;
 using MainLoop;
 using UI;
@@ -17,8 +18,13 @@ namespace Management
         
         private List<Coroutine> _timedCoroutines = new List<Coroutine>();
 
+        private ConfigurationsHolder _configurations;
+        private IAudioPlayController _mainMusicPlayController;
+
         public void Initialize(ConfigurationsHolder configurations)
         {
+            _configurations = configurations;
+            
             DayCounter = new DayCounter(configurations);
             TreasuryController = new TreasuryController(configurations);
 
@@ -31,11 +37,14 @@ namespace Management
         public IEnumerator Run()
         {
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
+            _mainMusicPlayController = _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameplayBGM);
+
             StartTimedCoroutines();
             
             yield return new WaitWhile(() => TreasuryController.Money.Value > 0.0f);
             
             StopTimedCoroutines();
+            _mainMusicPlayController.Stop();
         }
 
         private void StartTimedCoroutines()
@@ -43,9 +52,11 @@ namespace Management
             var dayCounterRoutine = StartCoroutine(DayCounter.Run());
             _timedCoroutines.Add(dayCounterRoutine);
             
+            TreasuryController.ResetTime();
             var moneyDecrementRoutine = StartCoroutine(TreasuryController.Run());
             _timedCoroutines.Add(moneyDecrementRoutine);
             
+            DragonSpawner.ResetTime();
             var dragonSpawnRoutine = StartCoroutine(DragonSpawner.Run());
             _timedCoroutines.Add(dragonSpawnRoutine);
         }

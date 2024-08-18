@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4828f2d00c04775a2807f16277490b8, type: 3}
   m_Name: ConfigurationsHolder
   m_EditorClassIdentifier: 
+  <AudioControllerHolder>k__BackingField: {fileID: 11400000, guid: 26c2dc11313334d63abd4d17a6e05667, type: 2}
   <MainLoopConfiguration>k__BackingField: {fileID: 11400000, guid: 10b1e6e79d8dd4b3bae4863a46bc6dc1, type: 2}

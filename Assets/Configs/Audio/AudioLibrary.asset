@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3735bbdab553d43eeb418629efae8b50, type: 3}
+  m_Name: AudioLibrary
+  m_EditorClassIdentifier: 
+  _audios:
+    m_keys: 01000000020000000500000006000000040000000a000000
+    m_values:
+    - <Type>k__BackingField: 1
+      <Priority>k__BackingField: 1
+      <IsLooped>k__BackingField: 1
+      <Volume>k__BackingField: 1
+      <FadeInTime>k__BackingField: 1
+      <FadeOutTime>k__BackingField: 0.5
+      <RandomPitch>k__BackingField: 0
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: 2e11a8582a02740e6bae30d0a2806382, type: 3}
+    - <Type>k__BackingField: 1
+      <Priority>k__BackingField: 2
+      <IsLooped>k__BackingField: 1
+      <Volume>k__BackingField: 0.6
+      <FadeInTime>k__BackingField: 1
+      <FadeOutTime>k__BackingField: 1
+      <RandomPitch>k__BackingField: 0
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: cb3107a5a1a8d41f1b0c5b6e3cfd4fd5, type: 3}
+    - <Type>k__BackingField: 2
+      <Priority>k__BackingField: 1
+      <IsLooped>k__BackingField: 0
+      <Volume>k__BackingField: 1
+      <FadeInTime>k__BackingField: 1
+      <FadeOutTime>k__BackingField: 0
+      <RandomPitch>k__BackingField: 0
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: 022e37437fcfd4198a25fd4fff866393, type: 3}
+    - <Type>k__BackingField: 2
+      <Priority>k__BackingField: 1
+      <IsLooped>k__BackingField: 0
+      <Volume>k__BackingField: 1
+      <FadeInTime>k__BackingField: 0.5
+      <FadeOutTime>k__BackingField: 0
+      <RandomPitch>k__BackingField: 0
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: f7cc1a5c5930e44699cd9cb60a7d654a, type: 3}
+    - <Type>k__BackingField: 2
+      <Priority>k__BackingField: 1
+      <IsLooped>k__BackingField: 0
+      <Volume>k__BackingField: 0.3
+      <FadeInTime>k__BackingField: 0
+      <FadeOutTime>k__BackingField: 0
+      <RandomPitch>k__BackingField: 0
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: e6e2906c908c74486bf5b1130da1149d, type: 3}
+    - <Type>k__BackingField: 2
+      <Priority>k__BackingField: 1
+      <IsLooped>k__BackingField: 0
+      <Volume>k__BackingField: 0.65
+      <FadeInTime>k__BackingField: 0.5
+      <FadeOutTime>k__BackingField: 0.5
+      <RandomPitch>k__BackingField: 0
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: 94a2e3eaddcc84fc18c89c4380c2e5c3, type: 3}

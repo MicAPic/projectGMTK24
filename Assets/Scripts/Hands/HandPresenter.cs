@@ -1,4 +1,6 @@
 using System.Collections;
+using Audio;
+using Configs;
 using Environment;
 using PrimeTween;
 using UniRx;
@@ -11,7 +13,8 @@ namespace Hands
         [Header("Damage Animation")]
         [SerializeField] TweenSettings _shrinkTweenSettings;
         [SerializeField] private Transform _palm;
-
+        [SerializeField] private ConfigurationsHolder _configurations;
+        
 
         private Vector3 _defaultPosition;
         private bool _isAnimatingDamage;
@@ -31,6 +34,7 @@ namespace Hands
             if (_isAnimatingDamage) yield break;
 
             _isAnimatingDamage = true;
+            _configurations.AudioControllerHolder.AudioController.Play(AudioID.Ouch);
             
             yield return Tween.Position(
                 _palm,

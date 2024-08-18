@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using Audio;
 using Configs;
 using Environment;
 using MainLoop;
@@ -27,6 +27,7 @@ namespace Dragon
         private ScreenSpawnSide _side;
         private ObjectPool<DamagingBehaviour> _fireElementPool;
         private bool _isSpawningFire;
+        private IAudioPlayController _dragonSoundPlayController;
 
         private void Awake()
         {
@@ -46,6 +47,7 @@ namespace Dragon
         public IEnumerator Run()
         {
             _isSpawningFire = true;
+            _dragonSoundPlayController = _configurations.AudioControllerHolder.AudioController.Play(AudioID.Roar);
 
             StartSpawningFire();
             
@@ -56,6 +58,7 @@ namespace Dragon
                 .ToYieldInstruction();
             
             _isSpawningFire = false;
+            _dragonSoundPlayController.Stop();
         }
 
         private void StartSpawningFire()
