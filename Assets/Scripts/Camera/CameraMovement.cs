@@ -12,13 +12,11 @@ namespace Camera
         [SerializeField] private float ignoreDistance = 5;
         [SerializeField] private float sensetivityScaler = 1.5f;
         [SerializeField] private float castleYOffset = -3;
+        [SerializeField] private float _startZoomValue = 5;
+        [SerializeField] private float _endZoomValue = 10.6f;
 
         private float _startCameraYPosition;
         private float _endCameraYPosition;
-
-        private float _startZoomValue = 5;
-        private float _endZoomValue = 8;
-
 
         private UnityEngine.Camera _camera;
         private float _maxDistanceBetweenHandAndCastle;
