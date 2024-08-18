@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MainLoopConfiguration
   m_EditorClassIdentifier: 
   <TimeBetweenDays>k__BackingField: 10
+  <InitialMoneyAmount>k__BackingField: 333
   <MaxMoneyAmount>k__BackingField: 99999
   <MinMoneyAmount>k__BackingField: 0
   <MoneyReductionSpeedCurve>k__BackingField:
@@ -136,3 +137,5 @@ MonoBehaviour:
   <DragonPrefab>k__BackingField: {fileID: 7181610055722753781, guid: f0e156332bac543799e58bc00d39a28d, type: 3}
   <FireSpawnCooldown>k__BackingField: 0.07
   <FireRemainTime>k__BackingField: 2
+  <TutorialAlwaysStarts>k__BackingField: 1
+  <TutorialPrefsKey>k__BackingField: TutorialTimesSeen

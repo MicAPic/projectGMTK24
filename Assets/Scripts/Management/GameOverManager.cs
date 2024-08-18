@@ -12,6 +12,8 @@ namespace Management
         public void Initialize(ConfigurationsHolder configurations)
         {
             _configurations = configurations;
+
+
         }
 
         public IEnumerator Run()

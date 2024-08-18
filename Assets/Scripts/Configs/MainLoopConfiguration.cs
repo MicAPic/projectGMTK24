@@ -1,4 +1,3 @@
-using Dragon;
 using MainLoop;
 using UniTools.Collections;
 using UnityEngine;
@@ -26,5 +25,8 @@ namespace Configs
         
         [field: SerializeField] public float FireSpawnCooldown { get; private set; }
         [field: SerializeField] public float FireRemainTime { get; private set; }
+
+        [field: SerializeField] public bool TutorialAlwaysStarts { get; private set; } = false;
+        [field: SerializeField] public string TutorialPrefsKey { get; private set; } = "TutorialTimesSeen";
     }
 }
