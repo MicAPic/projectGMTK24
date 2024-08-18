@@ -32,12 +32,14 @@ namespace Management
             DragonSpawner = new DragonSpawner(configurations, dragon, _ui.GetPointerIcon());
             
             _ui.Initialize(this);
+            _ui.HideScreen();
         }
         
         public IEnumerator Run()
         {
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
             _mainMusicPlayController = _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameplayBGM);
+            _ui.ShowScreen();
 
             StartTimedCoroutines();
             
@@ -45,6 +47,7 @@ namespace Management
             
             StopTimedCoroutines();
             _mainMusicPlayController.Stop();
+            _ui.HideScreen();
         }
 
         private void StartTimedCoroutines()

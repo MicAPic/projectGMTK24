@@ -8,6 +8,8 @@ namespace Configs
     [CreateAssetMenu(menuName = "ScriptableObject/Configs/MainLoopConfiguration", order = 1)]
     public class MainLoopConfiguration : ScriptableObject
     {
+        [field: SerializeField] public float DelayBeforeStart { get; private set; } = 3.0f;
+        
         [field: SerializeField] public float TimeBetweenDays { get; private set; } = 10.0f;
 
         [field: SerializeField] public float InitialMoneyAmount { get; private set; } = 333.0f;

@@ -13,6 +13,7 @@ namespace Audio
         HouseReady = 8,
         Ouch = 9,
         Roar = 10,
+        FanfareShort = 11,
 
         Click = 100,
         MenuBGM = 101,

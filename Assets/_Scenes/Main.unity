@@ -1340,15 +1340,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8808966723945715433, guid: 47fbef66557f943e8a3c600d248136d9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47fbef66557f943e8a3c600d248136d9, type: 3}
+--- !u!114 &1609823570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3016927821242093375, guid: 47fbef66557f943e8a3c600d248136d9, type: 3}
+  m_PrefabInstance: {fileID: 1609823569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97d1818b1de4d83ad75fb2b5d58e65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1609823571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4636747155937050433, guid: 47fbef66557f943e8a3c600d248136d9, type: 3}
+  m_PrefabInstance: {fileID: 1609823569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52260d4470b40ec9633c18ee157143e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1616743705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4871305093259758892, guid: 564cb31a41e05bf4fa3b42165ae5fe03, type: 3}
@@ -1747,6 +1765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2261491526626721786, guid: 8a4dd927c359347529276cdfaca8bc4a, type: 3}
+      propertyPath: _ui
+      value: 
+      objectReference: {fileID: 1609823570}
     - target: {fileID: 4767746066015229734, guid: 8a4dd927c359347529276cdfaca8bc4a, type: 3}
       propertyPath: m_Name
       value: GameRunner
@@ -1791,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8263576114369787365, guid: 8a4dd927c359347529276cdfaca8bc4a, type: 3}
+      propertyPath: _ui
+      value: 
+      objectReference: {fileID: 1609823571}
     - target: {fileID: 8370722656597801774, guid: 8a4dd927c359347529276cdfaca8bc4a, type: 3}
       propertyPath: _ui
       value: 

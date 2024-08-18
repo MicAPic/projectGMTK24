@@ -19,8 +19,6 @@ namespace Management
             _tutorialManager.Initialize(_configurations);
             _mainLoopManager.Initialize(_configurations);
             _gameOverManager.Initialize(_configurations);
-            
-            _configurations.AudioControllerHolder.Initialize(gameObject);
         }
 
         // Start is called before the first frame update
