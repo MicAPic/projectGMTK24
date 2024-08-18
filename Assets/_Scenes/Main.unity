@@ -398,6 +398,11 @@ MonoBehaviour:
   - {fileID: 18775170}
   background: {fileID: 2080015608}
   deltaBoundries: 2
+  ignoreDistance: 5
+  sensetivityScaler: 1.5
+  castleYOffset: -3
+  _startZoomValue: 5
+  _endZoomValue: 10.6
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

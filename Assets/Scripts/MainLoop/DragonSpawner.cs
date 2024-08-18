@@ -45,6 +45,8 @@ namespace MainLoop
                 var currentStartDelay = DelayCurve.Evaluate(ElapsedTime);
                 yield return Tween.Delay(currentStartDelay).ToYieldInstruction();
                 
+                yield return _dragon.Run();
+                
                 _dragon.Hide();
             }
         }
@@ -56,7 +58,7 @@ namespace MainLoop
 
             var randomPointOnSide = DragonSpawnRanges[randomSide].GetRandomPoint();
 
-            _dragon.SetAnimation(randomSide);
+            _dragon.SetSide(randomSide);
             _dragon.transform.position = randomPointOnSide;
             
             _dragon.Show();

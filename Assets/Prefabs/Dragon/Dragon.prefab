@@ -190,6 +190,23 @@ MonoBehaviour:
     - {fileID: 7400000, guid: 3a179027f83ff4f568827b713c4bdae9, type: 2}
     - {fileID: 7400000, guid: c14daac1caf2f42a8b3497fe0e489a2f, type: 2}
     - {fileID: 7400000, guid: 75f08b4bb856c4216a439d544d33fb8c, type: 2}
+  _travelTweenSettings:
+    duration: 4
+    ease: 1
+    customEase:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    cycles: 1
+    cycleMode: 0
+    startDelay: 0
+    endDelay: 0
+    useUnscaledTime: 0
+    useFixedUpdate: 0
+  _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
+  _fireElementPrefab: {fileID: 4478083978492388229, guid: 5f615bf8040344a72bb5c77975990de2, type: 3}
 --- !u!111 &3983304892720927429
 Animation:
   m_ObjectHideFlags: 0

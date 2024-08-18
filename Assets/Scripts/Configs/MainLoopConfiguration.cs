@@ -20,6 +20,10 @@ namespace Configs
         [field: SerializeField] public AnimationCurve DragonStartDelay { get; private set; }
         [field: SerializeField] public AnimationCurve TimeBetweenDragons { get; private set; }
         [field: SerializeField] public SerializableDictionary<ScreenSpawnSide, Line> DragonSpawnRanges { get; private set; }
+        [field: SerializeField] public SerializableDictionary<ScreenSpawnSide, Vector3> DragonTravelDistance { get; private set; }
         [field: SerializeField] public GameObject DragonPrefab { get; private set; }
+        
+        [field: SerializeField] public float FireSpawnCooldown { get; private set; }
+        [field: SerializeField] public float FireRemainTime { get; private set; }
     }
 }
