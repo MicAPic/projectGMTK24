@@ -6,21 +6,33 @@ using UnityEngine;
 
 public class HouseController : MonoBehaviour
 {
+    [Header("Logic")]
     [SerializeField]
     private float containerLimit;
-
     [SerializeField]
     private float collectingSpeed;
-
     [SerializeField]
     private float rechargingSpeed;
+
+    [Header("Logic")]
+    [SerializeField]
+    private Transform mask;
+
+    [SerializeField]
+    private Vector3 endMaskPosition;
 
     private float _currentContainerValue;
     private bool _isHandTriggered = false;
     private bool _resetHouse = false;
+    private Vector3 _defaultMaskPosition;
 
     public static IObservable<float> CollectedCoins => _collectedCoins;
     private static Subject<float> _collectedCoins = new Subject<float>();
+
+    private void Awake()
+    {
+        _defaultMaskPosition = mask.localPosition;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +49,8 @@ public class HouseController : MonoBehaviour
             _resetHouse = false;
             StartCoroutine(Run());
         }
+
+        mask.localPosition = Vector3.Lerp(endMaskPosition, _defaultMaskPosition, _currentContainerValue / containerLimit);
     }
 
     public IEnumerator Run()

@@ -22,7 +22,7 @@ namespace MainLoop
         {
             _configurations = configurations;
             _startTime = Time.time;
-            _money.Value = _configurations.MainLoopConfiguration.MaxMoneyAmount;
+            _money.Value = _configurations.MainLoopConfiguration.MaxMoneyAmount / 3;
 
             HouseController.CollectedCoins.Subscribe(x => AddMoney(x));
         }
@@ -34,7 +34,7 @@ namespace MainLoop
                 var currentDecrement = DifficultyCurve.Evaluate(ElapsedTime);
                 // Debug.Log(currentDecrement);
                 
-                RemoveMoney(currentDecrement);
+                RemoveMoney(currentDecrement * Time.deltaTime);
                 yield return null;
             }
         }
