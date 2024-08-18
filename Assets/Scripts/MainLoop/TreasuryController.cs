@@ -36,7 +36,7 @@ namespace MainLoop
             {
                 var currentDecrement = DifficultyCurve.Evaluate(ElapsedTime);
                 
-                RemoveMoney(currentDecrement);
+                RemoveMoney(currentDecrement * Time.deltaTime);
                 yield return null;
             }
         }

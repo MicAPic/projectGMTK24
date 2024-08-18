@@ -31,10 +31,10 @@ namespace Camera
             var backgroundPosition = background.transform.position;
             var size = background.size;
 
-            _castlePosition = new Vector3(backgroundPosition.x, backgroundPosition.y - size.y / 2, 0);
+            _castlePosition = new Vector3(backgroundPosition.x, backgroundPosition.y - size.y, 0);
             Vector3 backgroundAngle = new Vector3(
-                backgroundPosition.x + size.x / 2 - deltaBoundries, 
-                backgroundPosition.y - size.y / 2 + deltaBoundries, 
+                backgroundPosition.x + size.x - deltaBoundries, 
+                backgroundPosition.y - size.y + deltaBoundries, 
                 0);
 
             _maxDistanceBetweenHandAndCastle = Vector3.Distance(_castlePosition, backgroundAngle) - ignoreDistance/sensetivityScaler;

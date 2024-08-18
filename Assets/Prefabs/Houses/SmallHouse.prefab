@@ -53,8 +53,16 @@ PrefabInstance:
       value: SmallHouse
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: containerLimit
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: collectingSpeed
-      value: 20
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: rechargingSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
