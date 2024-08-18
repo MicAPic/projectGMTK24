@@ -9,14 +9,7 @@ public class DragonPointer : MonoBehaviour
     [SerializeField] private float pointerImageSize;
 
     private Vector3 _cameraCenterPosition;
-    private bool _isIconHiden;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         _cameraCenterPosition = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
@@ -44,22 +37,7 @@ public class DragonPointer : MonoBehaviour
         Vector3 position = _camera.WorldToScreenPoint(worldPosition);
         position = new Vector3((Mathf.Abs(position.x - pointerImageSize / 2)) * Mathf.Sign(position.x),
                                (Mathf.Abs(position.y - pointerImageSize / 2)) * Mathf.Sign(position.y), 0);
-        Debug.Log(position.ToString());
-
-
-        //if (fromCenterToDragon.magnitude > rayMinDistance && _isIconHiden)
-        //{
-        //    pointerIcon.SetActive(true);
-        //    _isIconHiden = false;
-        //}
-
-        //if (fromCenterToDragon.magnitude <= rayMinDistance && !_isIconHiden)
-        //{
-        //    pointerIcon.SetActive(false);
-        //    _isIconHiden = true;
-        //}
 
         pointerIcon.transform.position = position;
-
     }
 }
