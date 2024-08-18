@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6952859786547410131}
   - component: {fileID: 1555347581360148048}
+  - component: {fileID: 1405321709634124912}
   m_Layer: 0
   m_Name: Dragon_Sprite
   m_TagString: Untagged
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1405321709634124912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466331349329548797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb9a644ac7f4d069db7e4014b48796c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7181610055722753781
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +109,7 @@ GameObject:
   - component: {fileID: 5055037289609335219}
   - component: {fileID: 7243243334511710189}
   - component: {fileID: 3983304892720927429}
+  - component: {fileID: 8102139596421378294}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -183,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4535889a5144c688998a960e26ac89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1405321709634124912}
   _animationClips:
     m_keys: 00000000010000000200000003000000
     m_values:
@@ -223,3 +238,16 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &8102139596421378294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181610055722753781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de24afb2e1616324db8265eca267a3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointerImageSize: 50

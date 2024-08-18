@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dayCounterText: {fileID: 4570339658178526437}
   _moneyText: {fileID: 1396901768458542625}
+  _pointerIcon: {fileID: 6964166664527458105}
 --- !u!1 &8673552976428811147
 GameObject:
   m_ObjectHideFlags: 0

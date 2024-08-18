@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using Configs;
 using Environment;
 using MainLoop;
 using PrimeTween;
+using UniRx;
 using UniTools.Collections;
 using UniTools.Extensions;
 using UniTools.Patterns.ObjectPool;
@@ -13,8 +15,9 @@ namespace Dragon
 {
     public class DragonPresenter : MonoBehaviour
     {
-        public bool IsVisible { get; private set; }
+        public IReadOnlyReactiveProperty<bool> IsVisible => _sprite.IsVisible;
         
+        [SerializeField] private DragonSprite _sprite;
         [SerializeField] private SerializableDictionary<ScreenSpawnSide, AnimationClip> _animationClips;
         [SerializeField] private TweenSettings _travelTweenSettings;
         [SerializeField] private ConfigurationsHolder _configurations;
@@ -33,9 +36,6 @@ namespace Dragon
                 FireHolder.Instance.transform, 
                 10);
         }
-
-        private void OnBecameVisible() => IsVisible = true;
-        private void OnBecameInvisible() => IsVisible = false;
 
         public void SetSide(ScreenSpawnSide spawnSide)
         {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Configs;
 using Dragon;
 using PrimeTween;
+using UI;
 using UniTools.Extensions;
 using UnityEngine;
 using Utils;
@@ -22,13 +23,15 @@ namespace MainLoop
         private AnimationCurve DelayCurve => _configurations.MainLoopConfiguration.DragonStartDelay;
         private IReadOnlyDictionary<ScreenSpawnSide, Line> DragonSpawnRanges => _configurations.MainLoopConfiguration.DragonSpawnRanges;
 
-        public DragonSpawner(ConfigurationsHolder configurations, GameObject dragon)
+        public DragonSpawner(ConfigurationsHolder configurations, GameObject dragon, GameObject pointer)
         {
             _configurations = configurations;
             
             _startTime = Time.time;
             
             _dragon = dragon.GetComponent<DragonPresenter>();
+            dragon.GetComponent<DragonPointer>().Initialize(_dragon, pointer);
+            
             _dragon.Hide();
         }
         

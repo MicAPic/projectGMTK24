@@ -23,7 +23,7 @@ namespace Management
             TreasuryController = new TreasuryController(configurations);
 
             var dragon = Instantiate(configurations.MainLoopConfiguration.DragonPrefab);
-            DragonSpawner = new DragonSpawner(configurations, dragon);
+            DragonSpawner = new DragonSpawner(configurations, dragon, _ui.GetPointerIcon());
             
             _ui.Initialize(this);
         }
