@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Camera
@@ -8,6 +9,9 @@ namespace Camera
         [SerializeField] private List<Transform> handsPositions;
         [SerializeField] private SpriteRenderer background;
         [SerializeField] private float deltaBoundries = 2;
+        [SerializeField] private float ignoreDistance = 5;
+        [SerializeField] private float sensetivityScaler = 1.5f;
+        [SerializeField] private float castleYOffset = -3;
 
         private float _startCameraYPosition;
         private float _endCameraYPosition;
@@ -33,12 +37,12 @@ namespace Camera
             _castlePosition = new Vector3(backgroundPosition.x, backgroundPosition.y - size.y / 2, 0);
             Vector3 backgroundAngle = new Vector3(
                 backgroundPosition.x + size.x / 2 - deltaBoundries, 
-                backgroundPosition.y - size.y / 2 - deltaBoundries, 
+                backgroundPosition.y - size.y / 2 + deltaBoundries, 
                 0);
 
-            _maxDistanceBetweenHandAndCastle = Vector3.Distance(_castlePosition, backgroundAngle);
+            _maxDistanceBetweenHandAndCastle = Vector3.Distance(_castlePosition, backgroundAngle) - ignoreDistance/sensetivityScaler;
 
-            _startCameraYPosition = backgroundPosition.y - 3;
+            _startCameraYPosition = backgroundPosition.y + castleYOffset;
             _endCameraYPosition = backgroundPosition.y;
             transform.position = new Vector3(backgroundPosition.x, _startCameraYPosition, -10);
         }
@@ -47,7 +51,9 @@ namespace Camera
         {
             float currentDistanceBetweenHandsAndCastle = Mathf.Max(
                 Vector3.Distance(handsPositions[0].position, _castlePosition),
-                Vector3.Distance(handsPositions[1].position, _castlePosition));
+                Vector3.Distance(handsPositions[1].position, _castlePosition)) - ignoreDistance;
+
+            currentDistanceBetweenHandsAndCastle = Mathf.Clamp(currentDistanceBetweenHandsAndCastle, 0, _maxDistanceBetweenHandAndCastle);
 
             var progress = currentDistanceBetweenHandsAndCastle / _maxDistanceBetweenHandAndCastle;
             
