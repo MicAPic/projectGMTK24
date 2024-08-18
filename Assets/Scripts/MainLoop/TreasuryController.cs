@@ -23,7 +23,7 @@ namespace MainLoop
         public TreasuryController(ConfigurationsHolder configurations)
         {
             _configurations = configurations;
-            _money.Value = _configurations.MainLoopConfiguration.MaxMoneyAmount;
+            _money.Value = _configurations.MainLoopConfiguration.InitialMoneyAmount;
             
             ResetTime();
 
