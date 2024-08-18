@@ -78,6 +78,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 3217731937327615089}
   _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
+  _spritesToFade:
+  - {fileID: 151403122270317994}
+  - {fileID: 7376762376020413311}
+  _handRenderer: {fileID: 608136547703393124}
+  _fadeSettings:
+    startFromCurrent: 0
+    startValue: 1
+    endValue: 0.5
+    settings:
+      duration: 0.5
+      ease: 0
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: 1
+      cycleMode: 0
+      startDelay: 0
+      endDelay: 0
+      useUnscaledTime: 0
+      useFixedUpdate: 0
 --- !u!1 &3698180933582075368
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,8 +193,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -0.68472517, y: -0.9973682, z: 0}
-    m_Extent: {x: 1.0833788, y: 1.5272933, z: 0}
+    m_Center: {x: -0.69925034, y: -0.9969028, z: 0}
+    m_Extent: {x: 1.0928321, y: 1.5267919, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &3378279357819319698
 MonoBehaviour:
@@ -221,15 +244,17 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -1.4942375, y: 0.5299251}
-  - {x: -1.5372385, y: -0.43247122}
-  - {x: -1.5222514, y: -0.7489859}
-  - {x: -1.4390678, y: -1.023008}
-  - {x: -1.241424, y: -1.2972939}
-  - {x: -1.088352, y: -1.4334981}
-  - {x: -0.8925989, y: -1.5707237}
-  - {x: -0.35348612, y: -1.8531758}
-  - {x: 0.23031434, y: -2.097295}
+  - {x: -1.4929104, y: 0.5298891}
+  - {x: -1.5199294, y: -0.09653703}
+  - {x: -1.5560122, y: -0.588892}
+  - {x: -1.5222883, y: -0.8831943}
+  - {x: -1.4720718, y: -1.0238478}
+  - {x: -1.2782531, y: -1.2982411}
+  - {x: -1.123999, y: -1.4344175}
+  - {x: -0.9244128, y: -1.5715463}
+  - {x: -0.6741624, y: -1.7108517}
+  - {x: -0.3679122, y: -1.8535528}
+  - {x: 0.2317419, y: -2.0938447}
 --- !u!114 &6837018451878168733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,15 +306,17 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.25
   m_Points:
-  - {x: -1.4942375, y: 0.5299251}
-  - {x: -1.5372385, y: -0.43247122}
-  - {x: -1.5222514, y: -0.7489859}
-  - {x: -1.4390678, y: -1.023008}
-  - {x: -1.241424, y: -1.2972939}
-  - {x: -1.088352, y: -1.4334981}
-  - {x: -0.8925989, y: -1.5707237}
-  - {x: -0.35348612, y: -1.8531758}
-  - {x: 0.23031434, y: -2.097295}
+  - {x: -1.4929104, y: 0.5298891}
+  - {x: -1.5199294, y: -0.09653703}
+  - {x: -1.5560122, y: -0.588892}
+  - {x: -1.5222883, y: -0.8831943}
+  - {x: -1.4720718, y: -1.0238478}
+  - {x: -1.2782531, y: -1.2982411}
+  - {x: -1.123999, y: -1.4344175}
+  - {x: -0.9244128, y: -1.5715463}
+  - {x: -0.6741624, y: -1.7108517}
+  - {x: -0.3679122, y: -1.8535528}
+  - {x: 0.2317419, y: -2.0938447}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
