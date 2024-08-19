@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Audio;
+using Configs;
 using Hands;
 using UniRx;
 using UnityEngine;
@@ -15,8 +17,6 @@ namespace Houses
         private float collectingSpeed;
         [SerializeField]
         private float rechargingSpeed;
-        [SerializeField]
-        private BoxCollider2D boxCollider;
 
         [Header("View")]
         [SerializeField]
@@ -24,6 +24,10 @@ namespace Houses
 
         [SerializeField]
         private Vector3 endMaskPosition;
+        
+        [Space]
+        
+        [SerializeField] private ConfigurationsHolder _configurations;
 
         private float _currentContainerValue;
         private bool _isHandTriggered = false;
@@ -88,16 +92,26 @@ namespace Houses
 
         private IEnumerator Collecting()
         {
+            IAudioPlayController coinsSoundPlayController = new NullAudioPlayController();
+            
             while(_currentContainerValue > 0)
             {
+                if(_isHandTriggered)
+                    coinsSoundPlayController =
+                        _configurations.AudioControllerHolder.AudioController.Play(AudioID.Coins);
+
                 while (_isHandTriggered)
                 {
                     if (_currentContainerValue <= 0)
+                    {
+                        coinsSoundPlayController.Stop();
                         break;
+                    }
 
                     var collectedCoins = collectingSpeed * Time.deltaTime;
                     _currentContainerValue -= collectedCoins;
                     _collectedCoins.OnNext(collectedCoins);
+
 
                     yield return null;
                 }

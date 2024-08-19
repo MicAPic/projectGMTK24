@@ -254,3 +254,4 @@ MonoBehaviour:
   rechargingSpeed: 10
   mask: {fileID: 7028664784356516373}
   endMaskPosition: {x: 0, y: -1, z: 0}
+  _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}

@@ -78,6 +78,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 3217731937327615089}
   _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
+  _spritesToFade:
+  - {fileID: 151403122270317994}
+  - {fileID: 7376762376020413311}
+  _handRenderer: {fileID: 608136547703393124}
+  _fadeSettings:
+    startFromCurrent: 0
+    startValue: 1
+    endValue: 0.5
+    settings:
+      duration: 0.5
+      ease: 0
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: 1
+      cycleMode: 0
+      startDelay: 0
+      endDelay: 0
+      useUnscaledTime: 0
+      useFixedUpdate: 0
 --- !u!1 &3698180933582075368
 GameObject:
   m_ObjectHideFlags: 0

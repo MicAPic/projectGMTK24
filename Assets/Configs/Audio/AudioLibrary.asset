@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
   _audios:
-    m_keys: 01000000020000000500000006000000040000000a000000090000000b000000
+    m_keys: 01000000020000000500000006000000040000000a000000090000000b00000003000000
     m_values:
     - <Type>k__BackingField: 1
       <Priority>k__BackingField: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
       <IsLooped>k__BackingField: 0
       <Volume>k__BackingField: 1
       <FadeInTime>k__BackingField: 1
-      <FadeOutTime>k__BackingField: 0
+      <FadeOutTime>k__BackingField: 0.5
       <RandomPitch>k__BackingField: 0
       <AudioClip>k__BackingField: {fileID: 8300000, guid: 022e37437fcfd4198a25fd4fff866393, type: 3}
     - <Type>k__BackingField: 2
@@ -79,3 +79,11 @@ MonoBehaviour:
       <FadeOutTime>k__BackingField: 1
       <RandomPitch>k__BackingField: 0
       <AudioClip>k__BackingField: {fileID: 8300000, guid: 777d498a261ec4ea6a41d6500f112266, type: 3}
+    - <Type>k__BackingField: 2
+      <Priority>k__BackingField: 2
+      <IsLooped>k__BackingField: 1
+      <Volume>k__BackingField: 0.35
+      <FadeInTime>k__BackingField: 0.1
+      <FadeOutTime>k__BackingField: 0.2
+      <RandomPitch>k__BackingField: 1
+      <AudioClip>k__BackingField: {fileID: 8300000, guid: e0117dd16bf3e46a7bd2d0621d4dc8e3, type: 3}
