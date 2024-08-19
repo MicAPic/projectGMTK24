@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Management;
 using PrimeTween;
 using TMPro;
 using UniRx;
+using UniTools.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,13 +17,16 @@ namespace UI
         [SerializeField] private TMP_Text _moneyText;
         [SerializeField] private Image _moneyBarFill;
         
-        [SerializeField] private TMP_Text _healthText; // todo: this should be an array of hearts
+        [SerializeField] private RectTransform _heartHolder;
+        [SerializeField] private GameObject _heartPrefab;
         
         [SerializeField] private GameObject _pointerIcon;
         
         [Header("Appearance Animation")]
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private TweenSettings<float> _fadeTweenSettings;
+
+        private List<GameObject> _hearts = new List<GameObject>();
 
         private void Awake()
         {
@@ -38,7 +43,16 @@ namespace UI
                 Tween.UIFillAmount(_moneyBarFill, x / Model.MaxMoneyAmount, 0.1f);
             }).AddTo(this);
 
-            Model.HealthController.Health.Subscribe(x => _healthText.text = $"Health: {x}").AddTo(this);
+            for (var i = 0; i < Model.MaxHealth; i++)
+            {
+                var heart = Instantiate(_heartPrefab, _heartHolder);
+                _hearts.Add(heart);
+            }
+            Model.HealthController.Health.Subscribe(i =>
+            {
+                if (i < _hearts.Count) 
+                    _hearts[i].Hide();
+            }).AddTo(this);
         }
 
         public GameObject GetPointerIcon() => _pointerIcon;
