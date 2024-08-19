@@ -10,7 +10,16 @@ namespace Management
 {
     public class MainLoopManager : MonoBehaviour, IGameStateManager
     {
+        public enum MainLoopResult
+        {
+            Undefined = 0,
+            Success = 1,
+            Failure = 2
+        }
+        
         [SerializeField] private MainLoopView _ui;
+        
+        public MainLoopResult Result { get; private set; }
         
         public DayCounter DayCounter { get; private set; }
         public TreasuryController TreasuryController { get; private set; }
@@ -47,6 +56,8 @@ namespace Management
 
             yield return new WaitWhile(() => TreasuryController.Money.Value < _configurations.MainLoopConfiguration.MaxMoneyAmount && 
                                                 HealthController.Health.Value > 0);
+
+            Result = MainLoopResult.Success;
 
             StopTimedCoroutines();
             _mainMusicPlayController.Stop();

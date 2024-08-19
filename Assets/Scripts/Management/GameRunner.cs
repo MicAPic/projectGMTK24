@@ -31,7 +31,9 @@ namespace Management
         {
             yield return _tutorialManager.Run();
             yield return _mainLoopManager.Run();
-            yield return _gameOverManager.Run();
+            yield return _gameOverManager
+                .WithResult(_mainLoopManager.Result)
+                .Run();
         }
     }
 }

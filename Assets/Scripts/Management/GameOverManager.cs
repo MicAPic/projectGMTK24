@@ -12,6 +12,7 @@ namespace Management
         [SerializeField] private GameOverView _ui;
         
         private ConfigurationsHolder _configurations;
+        private MainLoopManager.MainLoopResult _mainLoopResult;
 
         public void Initialize(ConfigurationsHolder configurations)
         {
@@ -21,9 +22,17 @@ namespace Management
             _ui.HideScreen();
         }
 
+        public GameOverManager WithResult(MainLoopManager.MainLoopResult mainLoopResult)
+        {
+            _mainLoopResult = mainLoopResult;
+            return this;
+        }
+
         public IEnumerator Run()
         {
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
+            Debug.LogWarning($"Result: {_mainLoopResult}");
+            
             _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
             _ui.ShowScreen();
             yield return null;
