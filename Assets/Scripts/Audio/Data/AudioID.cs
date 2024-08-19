@@ -17,5 +17,6 @@ namespace Audio
 
         Click = 100,
         MenuBGM = 101,
+        PageTurn = 102,
     }
 }

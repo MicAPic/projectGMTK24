@@ -3,6 +3,7 @@ using System.Collections;
 using Audio;
 using Configs;
 using Hands;
+using PrimeTween;
 using UniRx;
 using UnityEngine;
 
@@ -21,6 +22,10 @@ namespace Houses
         [Header("View")]
         [SerializeField]
         private Transform mask;
+        [SerializeField]
+        private SpriteRenderer houseSprite;
+        [SerializeField]
+        private float spriteRechargeAlpha = 0.1f;
 
         [SerializeField]
         private Vector3 endMaskPosition;
@@ -127,12 +132,15 @@ namespace Houses
 
         private IEnumerator Recharging()
         {
+            Tween.Alpha(houseSprite, spriteRechargeAlpha, 0.1f);
             while (_currentContainerValue < containerLimit)
             {
                 _currentContainerValue += rechargingSpeed * Time.deltaTime;
                 yield return null;
             }
             _currentContainerValue = containerLimit;
+            Tween.Alpha(houseSprite, 1.0f, 0.1f);
+            
             _resetHouse = true;
         }
 
