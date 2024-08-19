@@ -19,14 +19,6 @@ namespace UI
             _scrollBody.sizeDelta = _sizeTweenSettings.startValue;
         }
 
-        private IEnumerator Start()
-        {
-            yield return new WaitForSeconds(0.5f);
-            Open();
-            yield return new WaitForSeconds(5.0f);
-            Close();
-        }
-
         public void Open()
         {
             Sequence.Create()

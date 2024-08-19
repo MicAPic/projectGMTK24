@@ -33,6 +33,7 @@ namespace Management
             yield return _mainLoopManager.Run();
             yield return _gameOverManager
                 .WithResult(_mainLoopManager.Result)
+                .WithDayCount(_mainLoopManager.DayCounter.Day.Value)
                 .Run();
         }
     }

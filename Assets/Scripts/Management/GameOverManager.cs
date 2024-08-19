@@ -16,6 +16,8 @@ namespace Management
 
         private ConfigurationsHolder _configurations;
         private MainLoopManager.MainLoopResult _mainLoopResult;
+        
+        public int DayCount { get; private set; }
 
         public void Initialize(ConfigurationsHolder configurations)
         {
@@ -33,6 +35,12 @@ namespace Management
             _mainLoopResult = mainLoopResult;
             return this;
         }
+        
+        public GameOverManager WithDayCount(int dayCount)
+        {
+            DayCount = dayCount;
+            return this;
+        }
 
         public IEnumerator Run()
         {
@@ -40,14 +48,15 @@ namespace Management
             Debug.LogWarning($"Result: {_mainLoopResult}");
             
             _configurations.AudioControllerHolder.AudioController.StopAll(AudioType.SFX);
-            _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
             
             switch (_mainLoopResult)
             {
                 case MainLoopManager.MainLoopResult.Success:
+                    _configurations.AudioControllerHolder.AudioController.Play(AudioID.FanfareShort);
                     _winUi.ShowScreen();
                     break;
                 case MainLoopManager.MainLoopResult.Failure:
+                    _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
                     _loseUi.ShowScreen();
                     break;
                 case MainLoopManager.MainLoopResult.Undefined:
@@ -60,6 +69,11 @@ namespace Management
         public void Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
+        public void Return()
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 }
