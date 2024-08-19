@@ -14,6 +14,7 @@ namespace Management
         
         public DayCounter DayCounter { get; private set; }
         public TreasuryController TreasuryController { get; private set; }
+        public HealthController HealthController { get; private set; }
         public DragonSpawner DragonSpawner { get; private set; }
         
         private List<Coroutine> _timedCoroutines = new List<Coroutine>();
@@ -27,6 +28,7 @@ namespace Management
             
             DayCounter = new DayCounter(configurations);
             TreasuryController = new TreasuryController(configurations);
+            HealthController = new HealthController(configurations);
 
             var dragon = Instantiate(configurations.MainLoopConfiguration.DragonPrefab);
             DragonSpawner = new DragonSpawner(configurations, dragon, _ui.GetPointerIcon());
@@ -42,9 +44,10 @@ namespace Management
             _ui.ShowScreen();
 
             StartTimedCoroutines();
-            
-            yield return new WaitWhile(() => TreasuryController.Money.Value > 0.0f);
-            
+
+            yield return new WaitWhile(() => TreasuryController.Money.Value < _configurations.MainLoopConfiguration.MaxMoneyAmount && 
+                                                HealthController.Health.Value > 0);
+
             StopTimedCoroutines();
             _mainMusicPlayController.Stop();
             _ui.HideScreen();
@@ -54,10 +57,8 @@ namespace Management
         {
             var dayCounterRoutine = StartCoroutine(DayCounter.Run());
             _timedCoroutines.Add(dayCounterRoutine);
-            
-            TreasuryController.ResetTime();
-            var moneyDecrementRoutine = StartCoroutine(TreasuryController.Run());
-            _timedCoroutines.Add(moneyDecrementRoutine);
+
+            HealthController.ResetHearts();
             
             DragonSpawner.ResetTime();
             var dragonSpawnRoutine = StartCoroutine(DragonSpawner.Run());

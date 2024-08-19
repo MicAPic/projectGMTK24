@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DelayBeforeStart>k__BackingField: 3.5
   <TimeBetweenDays>k__BackingField: 10
-  <InitialMoneyAmount>k__BackingField: 333
+  <InitialMoneyAmount>k__BackingField: 1
   <MaxMoneyAmount>k__BackingField: 999
   <MinMoneyAmount>k__BackingField: 0
   <MoneyReductionSpeedCurve>k__BackingField:
@@ -203,3 +203,4 @@ MonoBehaviour:
   <FireRemainTime>k__BackingField: 2
   <TutorialAlwaysStarts>k__BackingField: 1
   <TutorialPrefsKey>k__BackingField: TutorialTimesSeen
+  <MaxHealth>k__BackingField: 3

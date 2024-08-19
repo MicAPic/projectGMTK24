@@ -3,6 +3,7 @@ using Configs;
 using Environment;
 using PrimeTween;
 using UniRx;
+using UniTools.Extensions;
 using UnityEngine;
 
 namespace Hands
@@ -23,8 +24,10 @@ namespace Hands
         private IEnumerator FreezeMovement()
         {
             _controller.CanMove = false;
+            _controller.DisableColliders();
             yield return Tween.Delay(_configurations.MainLoopConfiguration.DamageCooldownDuration).ToYieldInstruction();
             _controller.CanMove = true;
+            _controller.EnableColliders();
         }
     }
 }

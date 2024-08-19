@@ -222,6 +222,7 @@ MonoBehaviour:
     useFixedUpdate: 0
   _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
   _fireElementPrefab: {fileID: 4478083978492388229, guid: 5f615bf8040344a72bb5c77975990de2, type: 3}
+  _fireYPositionOffset: 3
 --- !u!111 &3983304892720927429
 Animation:
   m_ObjectHideFlags: 0

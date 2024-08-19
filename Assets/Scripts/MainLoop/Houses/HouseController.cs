@@ -15,6 +15,8 @@ namespace Houses
         private float collectingSpeed;
         [SerializeField]
         private float rechargingSpeed;
+        [SerializeField]
+        private BoxCollider2D boxCollider;
 
         [Header("View")]
         [SerializeField]
@@ -90,21 +92,18 @@ namespace Houses
             {
                 while (_isHandTriggered)
                 {
+                    if (_currentContainerValue <= 0)
+                        break;
+
                     var collectedCoins = collectingSpeed * Time.deltaTime;
                     _currentContainerValue -= collectedCoins;
                     _collectedCoins.OnNext(collectedCoins);
-                    if (_currentContainerValue < 0)
-                    {
-                        _currentContainerValue = 0;
-                        yield return null;
-                    }
 
                     yield return null;
                 }
-                if (_currentContainerValue < 0)
+                while(_currentContainerValue <= 0 && _isHandTriggered)
                 {
-                    _currentContainerValue = 0;
-                    yield break;
+                    yield return null;
                 }
                 yield return null;
             }
