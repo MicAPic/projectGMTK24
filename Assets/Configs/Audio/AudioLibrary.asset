@@ -36,7 +36,7 @@ MonoBehaviour:
       <IsLooped>k__BackingField: 0
       <Volume>k__BackingField: 1
       <FadeInTime>k__BackingField: 1
-      <FadeOutTime>k__BackingField: 0
+      <FadeOutTime>k__BackingField: 0.5
       <RandomPitch>k__BackingField: 0
       <AudioClip>k__BackingField: {fileID: 8300000, guid: 022e37437fcfd4198a25fd4fff866393, type: 3}
     - <Type>k__BackingField: 2

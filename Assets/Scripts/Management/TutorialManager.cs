@@ -43,7 +43,8 @@ namespace Management
             
             _ui.ShowScreen();
             
-            _configurations.AudioControllerHolder.AudioController.Play(AudioID.Fanfare);
+            var fanfarePlayer = 
+                _configurations.AudioControllerHolder.AudioController.Play(AudioID.Fanfare);
 
             var collectEventSubscription = HouseController.CollectedCoins
                 .Subscribe(x => _isActive = false);
@@ -53,6 +54,7 @@ namespace Management
                 yield return null;
             }
             
+            fanfarePlayer.Stop();
             collectEventSubscription?.Dispose();
             PlayerPrefs.SetInt(_configurations.MainLoopConfiguration.TutorialPrefsKey, 1);
             Debug.LogWarning("Tutorial ended");
