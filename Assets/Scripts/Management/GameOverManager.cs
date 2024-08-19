@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Audio;
 using Configs;
@@ -48,10 +49,8 @@ namespace Management
                     _loseUi.ShowScreen();
                     break;
                 case MainLoopManager.MainLoopResult.Undefined:
-
-                    break;
                 default:
-                    break;
+                    throw new Exception($"Main Loop result is {_mainLoopResult}");
             }
             yield return null;
         }

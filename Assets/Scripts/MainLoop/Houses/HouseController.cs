@@ -94,11 +94,10 @@ namespace Houses
         {
             IAudioPlayController coinsSoundPlayController = new NullAudioPlayController();
             
-            while(_currentContainerValue > 0)
+            while (_currentContainerValue > 0)
             {
-                if(_isHandTriggered)
-                    coinsSoundPlayController =
-                        _configurations.AudioControllerHolder.AudioController.Play(AudioID.Coins);
+                if (_isHandTriggered)
+                    coinsSoundPlayController = _configurations.AudioControllerHolder.AudioController.Play(AudioID.Coins);
 
                 while (_isHandTriggered)
                 {
@@ -112,13 +111,16 @@ namespace Houses
                     _currentContainerValue -= collectedCoins;
                     _collectedCoins.OnNext(collectedCoins);
 
-
                     yield return null;
                 }
-                while(_currentContainerValue <= 0 && _isHandTriggered)
+                
+                coinsSoundPlayController.Stop();
+                
+                while (_currentContainerValue <= 0 && _isHandTriggered)
                 {
                     yield return null;
                 }
+                
                 yield return null;
             }
         }
