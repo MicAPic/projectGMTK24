@@ -9,23 +9,50 @@ namespace Management
 {
     public class GameOverManager : MonoBehaviour, IGameStateManager
     {
-        [SerializeField] private GameOverView _ui;
-        
+        [SerializeField] private GameOverView _loseUi;
+        [SerializeField] private GameOverView _winUi;
+
         private ConfigurationsHolder _configurations;
+        private MainLoopManager.MainLoopResult _mainLoopResult;
 
         public void Initialize(ConfigurationsHolder configurations)
         {
             _configurations = configurations;
             
-            _ui.Initialize(this);
-            _ui.HideScreen();
+            _loseUi.Initialize(this);
+            _loseUi.HideScreen();
+
+            _winUi.Initialize(this);
+            _winUi.HideScreen();
+        }
+
+        public GameOverManager WithResult(MainLoopManager.MainLoopResult mainLoopResult)
+        {
+            _mainLoopResult = mainLoopResult;
+            return this;
         }
 
         public IEnumerator Run()
         {
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
-            _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
-            _ui.ShowScreen();
+            Debug.LogWarning($"Result: {_mainLoopResult}");
+            
+            switch (_mainLoopResult)
+            {
+                case MainLoopManager.MainLoopResult.Success:
+                    _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
+                    _winUi.ShowScreen();
+                    break;
+                case MainLoopManager.MainLoopResult.Failure:
+                    _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
+                    _loseUi.ShowScreen();
+                    break;
+                case MainLoopManager.MainLoopResult.Undefined:
+
+                    break;
+                default:
+                    break;
+            }
             yield return null;
         }
 

@@ -30,5 +30,7 @@ namespace Configs
 
         [field: SerializeField] public bool TutorialAlwaysStarts { get; private set; } = false;
         [field: SerializeField] public string TutorialPrefsKey { get; private set; } = "TutorialTimesSeen";
+
+        [field: SerializeField] public int MaxHealth { get; private set; } = 3;
     }
 }

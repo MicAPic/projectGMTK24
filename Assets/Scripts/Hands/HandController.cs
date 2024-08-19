@@ -14,7 +14,10 @@ namespace Hands
         [SerializeField] private float _turnSpeed = 10f;
 
         [SerializeField] private HandPositionConstraints _positionConstraints;
-            
+
+        [SerializeField] private EdgeCollider2D _edgeCollider;
+        [SerializeField] private BoxCollider2D _boxCollider;
+
         public IReadOnlyReactiveProperty<Vector2> Direction => _direction;
         private ReactiveProperty<Vector2> _direction;
         private Vector2 _desiredVelocity;
@@ -111,6 +114,18 @@ namespace Hands
                 _positionConstraints.MinPosition.y,
                 _positionConstraints.MaxPosition.y);
             _velocity = (positionAtEndOfStep - _rigidbody.position) / Time.deltaTime;
+        }
+
+        public void EnableColliders()
+        {
+            _edgeCollider.enabled = true;
+            _boxCollider.enabled = true;
+        }
+
+        public void DisableColliders()
+        {
+            _edgeCollider.enabled = false;
+            _boxCollider.enabled = false;
         }
     }
 }

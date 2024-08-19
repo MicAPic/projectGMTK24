@@ -22,6 +22,7 @@ namespace Dragon
         [SerializeField] private TweenSettings _travelTweenSettings;
         [SerializeField] private ConfigurationsHolder _configurations;
         [SerializeField] private DamagingBehaviour _fireElementPrefab;
+        [SerializeField] private float _fireYPositionOffset;
 
         private Animation _animation;
         private ScreenSpawnSide _side;
@@ -78,8 +79,8 @@ namespace Dragon
                 var (fire, token) = _fireElementPool.Get();
 
                 FireHolder.Instance.StartCoroutine(EndFire(token));
-                
-                fire.transform.position = transform.position;
+
+                fire.transform.position = new Vector3(transform.position.x, transform.position.y - _fireYPositionOffset, 0);
                 fire.Show();
                 yield return null;
             }

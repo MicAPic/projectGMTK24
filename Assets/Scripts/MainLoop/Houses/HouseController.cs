@@ -96,35 +96,29 @@ namespace Houses
             
             while(_currentContainerValue > 0)
             {
-                if (_isHandTriggered)
-                {
-                    coinsSoundPlayController = 
+                if(_isHandTriggered)
+                    coinsSoundPlayController =
                         _configurations.AudioControllerHolder.AudioController.Play(AudioID.Coins);
-                }
 
                 while (_isHandTriggered)
                 {
+                    if (_currentContainerValue <= 0)
+                    {
+                        coinsSoundPlayController.Stop();
+                        break;
+                    }
+
                     var collectedCoins = collectingSpeed * Time.deltaTime;
                     _currentContainerValue -= collectedCoins;
                     _collectedCoins.OnNext(collectedCoins);
-                    if (_currentContainerValue < 0)
-                    {
-                        _currentContainerValue = 0;
-                        coinsSoundPlayController.Stop();
-                        yield return null;
-                    }
+
 
                     yield return null;
                 }
-
-                coinsSoundPlayController.Stop();
-                
-                if (_currentContainerValue <= 0)
+                while(_currentContainerValue <= 0 && _isHandTriggered)
                 {
-                    _currentContainerValue = 0;
-                    yield break;
+                    yield return null;
                 }
-                
                 yield return null;
             }
         }
