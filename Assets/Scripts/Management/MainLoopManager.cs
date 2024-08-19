@@ -18,6 +18,9 @@ namespace Management
         }
         
         [SerializeField] private MainLoopView _ui;
+
+        public float MaxMoneyAmount => _configurations.MainLoopConfiguration.MaxMoneyAmount;
+        public float MaxHealth => _configurations.MainLoopConfiguration.MaxHealth;
         
         public MainLoopResult Result { get; private set; }
         
