@@ -19,7 +19,7 @@ namespace UI
 
         protected abstract void InitializeInternal();
 
-        public void ShowScreen() => _canvas.EnableComponent();
-        public void HideScreen() => _canvas.DisableComponent();
+        public virtual void ShowScreen() => _canvas.EnableComponent();
+        public virtual void HideScreen() => _canvas.DisableComponent();
     }
 }
