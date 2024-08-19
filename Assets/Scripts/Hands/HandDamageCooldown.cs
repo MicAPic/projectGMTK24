@@ -28,17 +28,9 @@ namespace Hands
         {
             var duration = _configurations.MainLoopConfiguration.DamageCooldownDuration;
             var sequence = Sequence.Create()
-                .ChainCallback(() =>
-                {
-                    _controller.CanMove = false;
-                    Debug.Log("Can't move");
-                })
+                .ChainCallback(() => _controller.CanMove = false)
                 .ChainDelay(duration)
-                .ChainCallback(() =>
-                {
-                    _controller.CanMove = true;
-                    Debug.Log("Can move");
-                });
+                .ChainCallback(() => _controller.CanMove = true);
             
             _spritesToFade.ForEach(sprite =>
             {
