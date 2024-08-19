@@ -5,6 +5,7 @@ using Configs;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using AudioType = Audio.AudioType;
 
 namespace Management
 {
@@ -38,14 +39,15 @@ namespace Management
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
             Debug.LogWarning($"Result: {_mainLoopResult}");
             
+            _configurations.AudioControllerHolder.AudioController.StopAll(AudioType.SFX);
+            _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
+            
             switch (_mainLoopResult)
             {
                 case MainLoopManager.MainLoopResult.Success:
-                    _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
                     _winUi.ShowScreen();
                     break;
                 case MainLoopManager.MainLoopResult.Failure:
-                    _configurations.AudioControllerHolder.AudioController.Play(AudioID.GameOver);
                     _loseUi.ShowScreen();
                     break;
                 case MainLoopManager.MainLoopResult.Undefined:

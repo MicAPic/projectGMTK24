@@ -142,6 +142,61 @@
                     "action": "MoveHand",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "IJKL",
+                    "id": "c0594fa6-2fd9-459f-b688-785c77907717",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHand",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "6234674a-0cae-4262-ba16-6f0c57a850df",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHand",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "20dca217-853e-4a13-b3ee-dba185de3721",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHand",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "3c4424f7-6ab4-4c21-8733-1e0bc625a256",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHand",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0faf4fcb-608f-4bd4-a560-715166e448d7",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHand",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

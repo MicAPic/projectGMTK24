@@ -2,15 +2,17 @@ using System.Collections;
 using Audio;
 using Configs;
 using Houses;
-using UI;
 using UniRx;
+using UniTools.Extensions;
 using UnityEngine;
 
 namespace Management
 {
     public class TutorialManager : MonoBehaviour, IGameStateManager
     {
-        [SerializeField] private TutorialView _ui;
+        [SerializeField] private Animator _controlTips;
+        [SerializeField] private string _animatorTrigger = "Hide";
+
 
         private ConfigurationsHolder _configurations;
         private bool _isActive;
@@ -24,9 +26,6 @@ namespace Management
 #if UNITY_EDITOR
             if (_configurations.MainLoopConfiguration.TutorialAlwaysStarts) _isActive = true;
 #endif
-            
-            _ui.Initialize(this);
-            _ui.HideScreen();
         }
 
         public IEnumerator Run()
@@ -41,7 +40,7 @@ namespace Management
                 yield break;
             }
             
-            _ui.ShowScreen();
+            _controlTips.Show();
             
             var fanfarePlayer = 
                 _configurations.AudioControllerHolder.AudioController.Play(AudioID.Fanfare);
@@ -57,8 +56,8 @@ namespace Management
             fanfarePlayer.Stop();
             collectEventSubscription?.Dispose();
             PlayerPrefs.SetInt(_configurations.MainLoopConfiguration.TutorialPrefsKey, 1);
+            _controlTips.SetTrigger(_animatorTrigger);
             Debug.LogWarning("Tutorial ended");
-            _ui.HideScreen();
         }
     }
 }
