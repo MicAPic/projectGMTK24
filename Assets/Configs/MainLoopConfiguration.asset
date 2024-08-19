@@ -15,7 +15,7 @@ MonoBehaviour:
   <DelayBeforeStart>k__BackingField: 3.5
   <TimeBetweenDays>k__BackingField: 10
   <InitialMoneyAmount>k__BackingField: 1
-  <MaxMoneyAmount>k__BackingField: 999
+  <MaxMoneyAmount>k__BackingField: 100
   <MinMoneyAmount>k__BackingField: 0
   <MoneyReductionSpeedCurve>k__BackingField:
     serializedVersion: 2

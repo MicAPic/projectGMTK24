@@ -57,7 +57,8 @@ namespace Management
             yield return new WaitWhile(() => TreasuryController.Money.Value < _configurations.MainLoopConfiguration.MaxMoneyAmount && 
                                                 HealthController.Health.Value > 0);
 
-            Result = MainLoopResult.Success;
+            Result = TreasuryController.Money.Value >= _configurations.MainLoopConfiguration.MaxMoneyAmount ? 
+                MainLoopResult.Success : MainLoopResult.Failure;
 
             StopTimedCoroutines();
             _mainMusicPlayController.Stop();
