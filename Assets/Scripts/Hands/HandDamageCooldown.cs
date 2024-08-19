@@ -31,7 +31,7 @@ namespace Hands
                 .ChainCallback(() => _controller.CanMove = false)
                 .ChainCallback(() =>  _controller.DisableColliders())
                 .ChainDelay(duration)
-                .ChainCallback(() => _controller.CanMove = true);
+                .ChainCallback(() => _controller.CanMove = true)
                 .ChainCallback(() => _controller.EnableColliders());
             
             _spritesToFade.ForEach(sprite =>
