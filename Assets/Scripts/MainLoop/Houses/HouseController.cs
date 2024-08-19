@@ -25,6 +25,7 @@ namespace Houses
 
         private float _currentContainerValue;
         private bool _isHandTriggered = false;
+        private bool _isBothHandsTriggered = false;
         private bool _resetHouse = false;
         private Vector3 _defaultMaskPosition;
 
@@ -65,7 +66,10 @@ namespace Houses
         {
             if(collision.gameObject.TryGetComponent(out HandController handController))
             {
-                _isHandTriggered = true;
+                if (_isHandTriggered)
+                    _isBothHandsTriggered = true;
+                else
+                    _isHandTriggered = true;
             }
         }
 
@@ -73,7 +77,10 @@ namespace Houses
         {
             if (collision.gameObject.TryGetComponent(out HandController handController))
             {
-                _isHandTriggered = false;
+                if(_isBothHandsTriggered)
+                    _isBothHandsTriggered = false;
+                else
+                    _isHandTriggered = false;
             }
         }
 
