@@ -597,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 9
   _acceleration: 20
-  _deceleration: 23
+  _deceleration: 30
   _turnSpeed: 45
   _positionConstraints: {fileID: 191204830367596676}
 --- !u!114 &191204830367596676
