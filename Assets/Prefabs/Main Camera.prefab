@@ -173,6 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29e1a76e9c942a6b91f1cb29adecfb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraShakeStrength: 1
+  _cameraShakeStrength: 1.5
   _cameraShakeDuration: 0.5
   _cameraShakeFrequency: 10

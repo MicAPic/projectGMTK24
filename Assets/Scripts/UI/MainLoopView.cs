@@ -28,11 +28,6 @@ namespace UI
 
         private List<GameObject> _hearts = new List<GameObject>();
 
-        private void Awake()
-        {
-            _canvasGroup.alpha = _fadeTweenSettings.startValue;
-        }
-
         protected override void InitializeInternal()
         {
             Model.DayCounter.Day.Subscribe(x => _dayCounterText.text = $"{x:00}").AddTo(this);

@@ -15,6 +15,7 @@ namespace UI
         private void Awake()
         {
             _canvasGroup.interactable = false;
+            _canvasGroup.blocksRaycasts = false;
             _canvasGroup.alpha = _alphaTweenSettings.startValue;
             _scrollBody.sizeDelta = _sizeTweenSettings.startValue;
         }
@@ -24,13 +25,21 @@ namespace UI
             Sequence.Create()
                 .Chain(Tween.Alpha(_canvasGroup, _alphaTweenSettings))
                 .Chain(Tween.UISizeDelta(_scrollBody, _sizeTweenSettings))
-                .ChainCallback(() => _canvasGroup.interactable = true);
+                .ChainCallback(() =>
+                {
+                    _canvasGroup.interactable = true;
+                    _canvasGroup.blocksRaycasts = true;
+                });
         }
         
         public void Close()
         {
             Sequence.Create()
-                .ChainCallback(() => _canvasGroup.interactable = false)
+                .ChainCallback(() =>
+                {
+                    _canvasGroup.interactable = false;
+                    _canvasGroup.blocksRaycasts = false;
+                })
                 .Chain(Tween.UISizeDelta(_scrollBody, _sizeTweenSettings.WithDirection(false)))
                 .Chain(Tween.Alpha(_canvasGroup, _alphaTweenSettings.WithDirection(false)));
         }

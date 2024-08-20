@@ -68,12 +68,12 @@ namespace Management
 
         public void Restart()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
         }
         
         public void Return()
         {
-            SceneManager.LoadScene("Menu");
+            TransitionManager.Instance.LoadScene("Menu");
         }
     }
 }

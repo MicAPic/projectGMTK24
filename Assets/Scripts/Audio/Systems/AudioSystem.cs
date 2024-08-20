@@ -50,6 +50,13 @@ namespace Audio
         public void SetVolume(float volume)
         {
             MixerGroup.audioMixer.SetFloat(_mixerVolumeKey, volume);
+            PlayerPrefs.SetFloat(VolumePrefsKey, volume);
+        }
+        
+        public float GetVolume()
+        {
+            var hasValue = MixerGroup.audioMixer.GetFloat(_mixerVolumeKey, out var result);
+            return hasValue ? result : 0.0f;
         }
 
         public void StopAll() => _speakers.ForEach(x => Observable.FromCoroutine(x.Stop).Subscribe());
