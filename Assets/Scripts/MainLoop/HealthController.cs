@@ -1,9 +1,6 @@
 using Configs;
 using Environment;
-using Houses;
-using System.Collections;
 using UniRx;
-using UnityEngine;
 
 namespace MainLoop
 {

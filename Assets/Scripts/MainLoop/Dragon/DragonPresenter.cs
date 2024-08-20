@@ -18,13 +18,14 @@ namespace Dragon
         public IReadOnlyReactiveProperty<bool> IsVisible => _sprite.IsVisible;
         
         [SerializeField] private DragonSprite _sprite;
-        [SerializeField] private SerializableDictionary<ScreenSpawnSide, AnimationClip> _animationClips;
+        [SerializeField] private SerializableDictionary<ScreenSpawnSide, bool> _animationBools;
+        [SerializeField] private string _animationPropertyName = "isFacingLeft";
         [SerializeField] private TweenSettings _travelTweenSettings;
         [SerializeField] private ConfigurationsHolder _configurations;
         [SerializeField] private DamagingBehaviour _fireElementPrefab;
         [SerializeField] private float _fireYPositionOffset;
 
-        private Animation _animation;
+        private Animator _animator;
         private ScreenSpawnSide _side;
         private ObjectPool<DamagingBehaviour> _fireElementPool;
         private bool _isSpawningFire;
@@ -32,7 +33,7 @@ namespace Dragon
 
         private void Awake()
         {
-            _animation = GetComponent<Animation>();
+            _animator = GetComponent<Animator>();
             _fireElementPool = new ObjectPool<DamagingBehaviour>(
                 _fireElementPrefab, 
                 FireHolder.Instance.transform, 
@@ -42,7 +43,7 @@ namespace Dragon
         public void SetSide(ScreenSpawnSide spawnSide)
         {
             _side = spawnSide;
-            _animation.clip = _animationClips[spawnSide];
+            _animator.SetBool(_animationPropertyName, _animationBools[spawnSide]);
         }
 
         public IEnumerator Run()

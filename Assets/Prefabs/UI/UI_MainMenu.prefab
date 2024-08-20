@@ -120,19 +120,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3532272163343745514}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6768264866998605545}
-        m_TargetAssemblyTypeName: UI.ScrollWindow, Assembly-CSharp
-        m_MethodName: Open
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1999947390260265248
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,10 +241,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startButton: {fileID: 3458007871468324719}
+  _openSettingsButton: {fileID: 4200916834998333245}
+  _closeSettingsButton: {fileID: 1118236891803944671}
   _musicSlider: {fileID: 4947148618739789371}
   _musicSystem: {fileID: 11400000, guid: 08839557edfd14e03bc06bab5f9736a0, type: 2}
   _soundSlider: {fileID: 3647598673383448930}
   _soundSystem: {fileID: 11400000, guid: 4b4a34f09ed6343bc8676ac5b87528e7, type: 2}
+  _scrollWindow: {fileID: 6768264866998605545}
   _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
 --- !u!1 &2912469293735898045
 GameObject:
@@ -699,19 +690,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6083600790431840330}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6768264866998605545}
-        m_TargetAssemblyTypeName: UI.ScrollWindow, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6707380667626127747
 GameObject:
   m_ObjectHideFlags: 0
