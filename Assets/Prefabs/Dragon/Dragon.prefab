@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 230414607
+  m_SortingLayer: 1
+  m_SortingOrder: 21
   m_Sprite: {fileID: 21300000, guid: 96a090ab9f8cc4ec9912f5e3f671e06e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
     useFixedUpdate: 0
   _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
   _fireElementPrefab: {fileID: 4478083978492388229, guid: 5f615bf8040344a72bb5c77975990de2, type: 3}
-  _fireYPositionOffset: 3
+  _fireYPositionOffset: 1.5
 --- !u!114 &8102139596421378294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,9 +219,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 230414607
+  m_SortingLayer: 1
+  m_SortingOrder: 21
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
