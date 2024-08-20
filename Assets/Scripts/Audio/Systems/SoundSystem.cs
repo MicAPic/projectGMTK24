@@ -17,7 +17,7 @@ namespace Audio
             _speakers.Clear();
         }
 
-        protected override string VolumePrefsKey => "SOUND_VOLUME";
+        protected override AudioType Type => AudioType.SFX;
 
         protected override AudioSpeaker GetSpeaker(AudioPriority priority)
         {

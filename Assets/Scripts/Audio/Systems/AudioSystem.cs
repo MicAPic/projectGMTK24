@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Management;
 using UniRx;
 using UniTools.Extensions;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Audio
 
         private readonly HashSet<AudioSpeaker> _speakers = new HashSet<AudioSpeaker>();
 
-        protected abstract string VolumePrefsKey { get; }
+        protected abstract AudioType Type { get; }
         
         private GameObject _audioSourceHolder;
 
@@ -29,7 +30,7 @@ namespace Audio
         public void Initialize(GameObject audioSourceHolder)
         {
             _audioSourceHolder = audioSourceHolder;
-            SetVolume(PlayerPrefs.GetFloat(VolumePrefsKey, _defaultMixerValue));
+            SetVolume(AudioManager.Instance.Volumes[Type]);
         }
 
         protected AudioSource AddSource()
@@ -50,13 +51,12 @@ namespace Audio
         public void SetVolume(float volume)
         {
             MixerGroup.audioMixer.SetFloat(_mixerVolumeKey, volume);
-            PlayerPrefs.SetFloat(VolumePrefsKey, volume);
+            AudioManager.Instance.Volumes[Type] = volume;
         }
         
         public float GetVolume()
         {
-            var hasValue = MixerGroup.audioMixer.GetFloat(_mixerVolumeKey, out var result);
-            return hasValue ? result : 0.0f;
+            return AudioManager.Instance.Volumes[Type];
         }
 
         public void StopAll() => _speakers.ForEach(x => Observable.FromCoroutine(x.Stop).Subscribe());

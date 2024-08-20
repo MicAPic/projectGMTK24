@@ -45,7 +45,7 @@ namespace UI
             }
             Model.HealthController.Health.Subscribe(i =>
             {
-                if (i < _hearts.Count) 
+                if (i < _hearts.Count && i >= 0) 
                     _hearts[i].Hide();
             }).AddTo(this);
         }

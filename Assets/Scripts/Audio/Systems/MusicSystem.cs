@@ -8,7 +8,7 @@ namespace Audio
     {
         private readonly Dictionary<AudioPriority, AudioSpeaker> _speakers = new Dictionary<AudioPriority, AudioSpeaker>();
 
-        protected override string VolumePrefsKey => "MUSIC_VOLUME";
+        protected override AudioType Type => AudioType.BGM;
 
         protected override AudioSpeaker GetSpeaker(AudioPriority priority)
         {
