@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6090506108632834788}
   - component: {fileID: 8424297856525064125}
   - component: {fileID: 4478083978492388229}
-  - component: {fileID: 1021895850757018464}
+  - component: {fileID: 3090432999774785680}
   m_Layer: 0
   m_Name: FireElement
   m_TagString: Untagged
@@ -131,9 +131,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.004620075, y: 0.51498944}
-      - {x: -0.4260807, y: -0.4988745}
-      - {x: 0.3498516, y: -0.4757747}
+    - - {x: 0.32773757, y: 0.25880468}
+      - {x: -0.08044505, y: 0.5253292}
+      - {x: -0.38816833, y: 0.22835517}
+      - {x: -0.38954616, y: -0.503391}
+      - {x: 0.3670845, y: -0.50334734}
   m_UseDelaunayMesh: 0
 --- !u!114 &4478083978492388229
 MonoBehaviour:
@@ -147,18 +149,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dd4b8ebf0f46379b7a46f4b9324821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &1021895850757018464
-Animation:
+--- !u!95 &3090432999774785680
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7606347301853876556}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0582070599b9c4b08b24b187aae0dd57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

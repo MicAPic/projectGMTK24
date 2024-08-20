@@ -172,7 +172,7 @@ MonoBehaviour:
     - {x: 0, y: -41.9, z: 0}
     - {x: 0, y: -41.9, z: 0}
   <DragonPrefab>k__BackingField: {fileID: 7181610055722753781, guid: f0e156332bac543799e58bc00d39a28d, type: 3}
-  <FireSpawnCooldown>k__BackingField: 0.07
+  <FireSpawnCooldown>k__BackingField: 0.05
   <FireRemainTime>k__BackingField: 2
   <TutorialAlwaysStarts>k__BackingField: 1
   <TutorialPrefsKey>k__BackingField: TutorialTimesSeen
