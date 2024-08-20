@@ -40,10 +40,14 @@ namespace Dragon
                 10);
         }
 
+        private void OnEnable()
+        {
+            _animator.SetBool(_animationPropertyName, _animationBools[_side]);
+        }
+
         public void SetSide(ScreenSpawnSide spawnSide)
         {
             _side = spawnSide;
-            _animator.SetBool(_animationPropertyName, _animationBools[spawnSide]);
         }
 
         public IEnumerator Run()

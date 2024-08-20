@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de24afb2e1616324db8265eca267a3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointerImageSize: 50
+  _pointerImageSize: 116
 --- !u!212 &363262961907148234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cbe480f3ea7424314887fd38bf298a5f, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
