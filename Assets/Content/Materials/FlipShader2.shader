@@ -16,7 +16,7 @@ Shader "Custom/FlipShader2"
 	SubShader
 	{
 
-		Tags { "RenderType"="Fade" }
+		Tags { "RenderType"="Transparent" }
 		Blend SrcAlpha OneMinusSrcAlpha
 		LOD 200
 
