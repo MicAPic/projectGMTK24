@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
-    volume: 1
+    volume: 0.754
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,8 +389,8 @@ MonoBehaviour:
     m_Duration: 19.416666666666668
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1507511308709324863}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
+    m_EaseInDuration: 1
+    m_EaseOutDuration: 3.5
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
