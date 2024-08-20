@@ -13,6 +13,7 @@ namespace UI
     {
         [SerializeField] private TMP_Text _dayCounterText;
         
+        [SerializeField] private string _moneyCurrencySign;
         [SerializeField] private TMP_Text _moneyText;
         [SerializeField] private Image _moneyBarFill;
         
@@ -31,7 +32,7 @@ namespace UI
         {
             Model.DayCounter.Day.Subscribe(x => _dayCounterText.text = $"{x:00}").AddTo(this);
             
-            Model.TreasuryController.Money.Subscribe(x => _moneyText.text = $"L<space=0.1em>{x:0}").AddTo(this);
+            Model.TreasuryController.Money.Subscribe(x => _moneyText.text = $"{_moneyCurrencySign}<space=0.1em>{x:0}").AddTo(this);
             Model.TreasuryController.Money.Subscribe(x =>
             {
                 Tween.UIFillAmount(_moneyBarFill, x / Model.MaxMoneyAmount, 0.1f);
