@@ -82,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: containerLimit
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: collectingSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: rechargingSpeed
