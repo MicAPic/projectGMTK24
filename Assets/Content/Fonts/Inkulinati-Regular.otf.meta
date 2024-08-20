@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfae03621a1074ee1a1d5d5e7dd135f7
+guid: c46943f4d770b4d8b8c904e574cbb0b8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Obituary
+  - Inkulinati 210706
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

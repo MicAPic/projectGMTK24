@@ -879,7 +879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 75}
+  m_AnchoredPosition: {x: 0, y: 85}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7947788707855535403
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2026but you can try again!"
+  m_text: ...but you can try again!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
   m_sharedMaterial: {fileID: -374208916199574171, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
@@ -937,8 +937,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1088,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 75}
+  m_AnchoredPosition: {x: 0, y: 85}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3199029849382124751
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2026and spent <b>00</b> days."
+  m_text: ...and spent <b>00</b> days.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
   m_sharedMaterial: {fileID: -374208916199574171, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
@@ -1146,8 +1146,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: L<space=0.1em>0
+  m_text: "\xA3<space=0.1em>0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
   m_sharedMaterial: {fileID: -374208916199574171, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
@@ -1964,7 +1964,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7651761227617703502}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2529,12 +2529,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '00
-
-'
+  m_text: 01
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
-  m_sharedMaterial: {fileID: -374208916199574171, guid: 7adb6decefb9f4477b129af9a2a570c1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: eb8706a4b47224c1fbb72f5bdf8c3a72, type: 2}
+  m_sharedMaterial: {fileID: 4860297889099916476, guid: eb8706a4b47224c1fbb72f5bdf8c3a72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
