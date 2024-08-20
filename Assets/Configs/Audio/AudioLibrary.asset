@@ -98,7 +98,7 @@ MonoBehaviour:
     - <Type>k__BackingField: 2
       <Priority>k__BackingField: 1
       <IsLooped>k__BackingField: 0
-      <Volume>k__BackingField: 0.8
+      <Volume>k__BackingField: 0.3
       <FadeInTime>k__BackingField: 0
       <FadeOutTime>k__BackingField: 0
       <RandomPitch>k__BackingField: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
     - <Type>k__BackingField: 2
       <Priority>k__BackingField: 1
       <IsLooped>k__BackingField: 0
-      <Volume>k__BackingField: 0.6
+      <Volume>k__BackingField: 0.5
       <FadeInTime>k__BackingField: 0.1
       <FadeOutTime>k__BackingField: 0
       <RandomPitch>k__BackingField: 0

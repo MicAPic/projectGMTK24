@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using Configs;
 using PrimeTween;
 using UniTools.Patterns.Singletons;
@@ -18,6 +19,7 @@ namespace Management
         {
             _configurations.AudioControllerHolder.AudioController.StopAll(AudioType.BGM);
             _configurations.AudioControllerHolder.AudioController.StopAll(AudioType.SFX);
+            _configurations.AudioControllerHolder.AudioController.Play(AudioID.Click);
 
             Tween.StopAll();
             
