@@ -298,7 +298,7 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
-    BACKGROUND: '#ffe5b6'
+    BACKGROUND: '#B5A287'
     OPTIMIZE_FOR_PIXEL_ART: 
     PRODUCT_DESCRIPTION: 
     SCALE_TO_FIT: 
