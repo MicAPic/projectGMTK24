@@ -83,7 +83,7 @@ namespace Hands
                 _maxSpeedChange.y = _deceleration * Time.deltaTime;
             }
 
-            if (CanMove || _willNotMove)
+            if (CanMove && _willNotMove is false)
             {
                 CalculateCurrentVelocity();
                 ClampCurrentVelocity();

@@ -149,7 +149,7 @@ MonoBehaviour:
   _animationBools:
     m_keys: 00000000010000000200000003000000
     m_values: 01000100
-  _animationPropertyName: isFacingLeft
+  _animationPropertyName: IsFacingLeft
   _travelTweenSettings:
     duration: 4
     ease: 1
