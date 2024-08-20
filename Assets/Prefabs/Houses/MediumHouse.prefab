@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: endMaskPosition.y
-      value: -2.73
+      value: -2.65
       objectReference: {fileID: 0}
     - target: {fileID: 7028664784356516373, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: m_LocalScale.x
@@ -98,7 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7028664784356516373, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.14
+      value: 3.0008981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028664784356516373, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
