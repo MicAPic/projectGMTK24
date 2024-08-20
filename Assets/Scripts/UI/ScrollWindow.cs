@@ -20,18 +20,18 @@ namespace UI
             _scrollBody.sizeDelta = _sizeTweenSettings.startValue;
         }
 
-        public void Open()
+        public Sequence Open()
         {
-            Sequence.Create()
+            return Sequence.Create()
                 .ChainCallback(() => _canvasGroup.blocksRaycasts = true)
                 .Chain(Tween.Alpha(_canvasGroup, _alphaTweenSettings))
                 .Chain(Tween.UISizeDelta(_scrollBody, _sizeTweenSettings))
                 .ChainCallback(() => _canvasGroup.interactable = true);
         }
         
-        public void Close()
+        public Sequence Close()
         {
-            Sequence.Create()
+            return Sequence.Create()
                 .ChainCallback(() => _canvasGroup.interactable = false)
                 .Chain(Tween.UISizeDelta(_scrollBody, _sizeTweenSettings.WithDirection(false)))
                 .Chain(Tween.Alpha(_canvasGroup, _alphaTweenSettings.WithDirection(false)))

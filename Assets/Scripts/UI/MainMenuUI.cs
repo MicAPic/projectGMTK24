@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
 using Audio;
 using Configs;
 using Management;
+using PrimeTween;
+using TMPro;
 using UniTools.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,14 +25,19 @@ namespace UI
         [SerializeField] private SoundSystem _soundSystem;
         [Space]
         [SerializeField] private ScrollWindow _scrollWindow;
+        [Space]
+        [SerializeField] private TMP_Text _title;
+        [SerializeField] private TweenSettings<float> _titleFadeSettings;
+        [SerializeField] private float _titleAppearanceDelay = 1.0f;
         
         [SerializeField] private ConfigurationsHolder _configurations;
 
-        private void Start()
+        private IEnumerator Start()
         {
+            _title.Hide();
             _startButton.Bind(StartGame);
-            BindWithSound(_openSettingsButton, _scrollWindow.Open);
-            BindWithSound(_closeSettingsButton, _scrollWindow.Close);
+            BindWithSound(_openSettingsButton, OpenScroll);
+            BindWithSound(_closeSettingsButton, CloseScroll);
 
             _musicSlider.value = _musicSystem.GetVolume().ConvertFromLogarithmic();
             _musicSlider.onValueChanged.AddListener(x => _musicSystem.SetVolume(x.ConvertToLogarithmic()));
@@ -38,7 +46,23 @@ namespace UI
             _soundSlider.onValueChanged.AddListener(x => _soundSystem.SetVolume(x.ConvertToLogarithmic()));
             
             _configurations.AudioControllerHolder.AudioController.Play(AudioID.MenuBGM);
+
+            yield return new WaitForSeconds(_titleAppearanceDelay);
+            _title.Show();
         }
+
+        private void OpenScroll()
+        {
+            _scrollWindow.Open();
+            Tween.Alpha(_title, _titleFadeSettings);
+        }
+
+        private void CloseScroll()
+        {
+            _scrollWindow.Close()
+                .Chain(Tween.Alpha(_title, _titleFadeSettings.WithDirection(false)));
+        }
+        
 
         private void BindWithSound(Button button, Action onClick)
         {
