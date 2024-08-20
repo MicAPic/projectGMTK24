@@ -148,8 +148,8 @@ MonoBehaviour:
   _animationClips:
     m_keys: 00000000010000000200000003000000
     m_values:
-    - {fileID: 7400000, guid: 3a179027f83ff4f568827b713c4bdae9, type: 2}
-    - {fileID: 7400000, guid: 3a179027f83ff4f568827b713c4bdae9, type: 2}
+    - {fileID: 7400000, guid: c14daac1caf2f42a8b3497fe0e489a2f, type: 2}
+    - {fileID: 7400000, guid: 75f08b4bb856c4216a439d544d33fb8c, type: 2}
     - {fileID: 7400000, guid: c14daac1caf2f42a8b3497fe0e489a2f, type: 2}
     - {fileID: 7400000, guid: 75f08b4bb856c4216a439d544d33fb8c, type: 2}
   _travelTweenSettings:
