@@ -28,6 +28,9 @@ namespace UI
 
         private IEnumerator Transition()
         {
+            _material.SetFloat(Progress, 0.99f);
+            yield return new WaitForEndOfFrame();
+            
             for (var t = 0.0f; t <= 1.0f; t += Time.deltaTime / transitionDuration)
             {
                 var progress = Mathf.Lerp(0.0f, 0.99f, t);
