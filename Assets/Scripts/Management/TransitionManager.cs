@@ -9,7 +9,7 @@ using AudioType = Audio.AudioType;
 
 namespace Management
 {
-    public class TransitionManager : PersistentSingleton<TransitionManager>
+    public class TransitionManager : Singleton<TransitionManager>
     {
         [SerializeField] private ConfigurationsHolder _configurations;
         [SerializeField] private Material _transitionMaterial;

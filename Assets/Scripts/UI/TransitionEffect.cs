@@ -1,7 +1,6 @@
 using System.Collections;
 using Audio;
 using Configs;
-using UniTools.Patterns.Singletons;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,7 @@ namespace UI
 
         private IEnumerator Transition()
         {
-            _material.SetFloat(Progress, 0.99f);
+            _material.SetFloat(Progress, 0.0f);
             yield return new WaitForEndOfFrame();
             
             for (var t = 0.0f; t <= 1.0f; t += Time.deltaTime / transitionDuration)
