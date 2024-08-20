@@ -3,6 +3,7 @@ using System.Collections;
 using Audio;
 using Configs;
 using UI;
+using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using AudioType = Audio.AudioType;
@@ -11,6 +12,9 @@ namespace Management
 {
     public class GameOverManager : MonoBehaviour, IGameStateManager
     {
+        public static IObservable<Unit> GameOverStarted => _gameOverStarted;
+        private static Subject<Unit> _gameOverStarted = new Subject<Unit>();
+        
         [SerializeField] private GameOverView _loseUi;
         [SerializeField] private GameOverView _winUi;
 
@@ -47,6 +51,7 @@ namespace Management
             Debug.LogWarning($"I'm running! ({this.GetType().Name})");
             Debug.LogWarning($"Result: {_mainLoopResult}");
             
+            _gameOverStarted.OnNext(Unit.Default);
             _configurations.AudioControllerHolder.AudioController.StopAll(AudioType.SFX);
             
             switch (_mainLoopResult)

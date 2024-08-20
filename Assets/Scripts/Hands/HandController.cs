@@ -1,3 +1,4 @@
+using Management;
 using UniRx;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,9 +16,6 @@ namespace Hands
 
         [SerializeField] private HandPositionConstraints _positionConstraints;
 
-        [SerializeField] private EdgeCollider2D _edgeCollider;
-        [SerializeField] private BoxCollider2D _boxCollider;
-
         public IReadOnlyReactiveProperty<Vector2> Direction => _direction;
         private ReactiveProperty<Vector2> _direction;
         private Vector2 _desiredVelocity;
@@ -25,17 +23,20 @@ namespace Hands
         private Vector2 _maxSpeedChange;
     
         private Rigidbody2D _rigidbody;
+        private bool _willNotMove;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
     
             _direction = new ReactiveProperty<Vector2>(Vector2.zero);
+
+            GameOverManager.GameOverStarted.Subscribe(_ => _willNotMove = true).AddTo(this);
         }
             
         public void OnMoveHand(InputValue value)
         {
-            if (CanMove is false) return;
+            if (CanMove is false || _willNotMove) return;
             _direction.Value = value.Get<Vector2>();
         }
 
@@ -82,7 +83,7 @@ namespace Hands
                 _maxSpeedChange.y = _deceleration * Time.deltaTime;
             }
 
-            if (CanMove)
+            if (CanMove || _willNotMove)
             {
                 CalculateCurrentVelocity();
                 ClampCurrentVelocity();
@@ -114,18 +115,6 @@ namespace Hands
                 _positionConstraints.MinPosition.y,
                 _positionConstraints.MaxPosition.y);
             _velocity = (positionAtEndOfStep - _rigidbody.position) / Time.deltaTime;
-        }
-
-        public void EnableColliders()
-        {
-            _edgeCollider.enabled = true;
-            _boxCollider.enabled = true;
-        }
-
-        public void DisableColliders()
-        {
-            _edgeCollider.enabled = false;
-            _boxCollider.enabled = false;
         }
     }
 }

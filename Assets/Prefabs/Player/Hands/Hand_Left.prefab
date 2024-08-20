@@ -80,7 +80,6 @@ MonoBehaviour:
   _configurations: {fileID: 11400000, guid: 476600589d2f04322af93d756840cfef, type: 2}
   _spritesToFade:
   - {fileID: 151403122270317994}
-  - {fileID: 7376762376020413311}
   _handRenderer: {fileID: 608136547703393124}
   _fadeSettings:
     startFromCurrent: 0
@@ -601,8 +600,6 @@ MonoBehaviour:
   _deceleration: 23
   _turnSpeed: 45
   _positionConstraints: {fileID: 191204830367596676}
-  _edgeCollider: {fileID: 7445832848138864936}
-  _boxCollider: {fileID: 3581191751336459573}
 --- !u!114 &191204830367596676
 MonoBehaviour:
   m_ObjectHideFlags: 0
