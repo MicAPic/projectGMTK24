@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6090506108632834788}
   - component: {fileID: 8424297856525064125}
   - component: {fileID: 4478083978492388229}
+  - component: {fileID: 1021895850757018464}
   m_Layer: 0
   m_Name: FireElement
   m_TagString: Untagged
@@ -146,3 +147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dd4b8ebf0f46379b7a46f4b9324821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &1021895850757018464
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606347301853876556}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

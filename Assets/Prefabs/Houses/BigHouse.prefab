@@ -52,6 +52,30 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0bcf50fcd829a42869a2d39cb4572f55, type: 3}
+    - target: {fileID: 3330245432881114227, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330245432881114227, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330245432881114227, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493134787214351249, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_Radius
+      value: 1.1831882
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493134787214351249, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493134787214351249, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4677040964256426339, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: m_Name
       value: BigHouse
