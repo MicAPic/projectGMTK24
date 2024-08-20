@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b0a086f3109be457b960f95a9069f286
+guid: de063f449d64b4654980231fc0ffc648
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - UnifrakturMaguntia
+  - Obituary
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
