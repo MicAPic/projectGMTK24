@@ -82,15 +82,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: containerLimit
-      value: 35
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: collectingSpeed
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: rechargingSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5980460980915010405, guid: c8ea21cec8363f74098088e38c383e1b, type: 3}
       propertyPath: endMaskPosition.y
